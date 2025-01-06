@@ -1,0 +1,20 @@
+<div class="main-container">
+    <img ngSrc="/assets/ytu-logo-1.png" alt="" height="500" width="500" priority>
+    <div class="selectors">
+        <select #colorSelector class="color-selector">
+            <option value="White">Beyaz</option>
+            <option value="Black">Siyah</option>
+            <option value="Random">Rastgele</option>
+        </select>
+        <select #timeSelector class="time-selector">
+            <option value="Five">Hamle başı 5 dakika</option>
+            <option value="Four">Hamle başı 4 dakika</option>
+            <option value="Three">Hamle başı 3 dakika</option>
+            <option value="Two">Hamle başı 2 dakika</option>
+            <option value="One">Hamle başı 1 dakika</option>
+        </select>
+    </div>
+    <button class="start-game-button" (click)="StartGame(colorSelector.value, timeSelector.value)">
+        Maçı Başlat
+    </button>
+</div>
