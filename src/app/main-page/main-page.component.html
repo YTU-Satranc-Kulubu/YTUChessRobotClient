@@ -1,7 +1,4 @@
 <div class="main-container">
-    <div class="title">
-        <h1 style="color: white;">{{ 'mainpage.message' | translate }}</h1>
-    </div>
     <div class="images">
         <img ngSrc="/assets/ytu-logo-2.png" alt="" height="500" width="500" priority>
         <img ngSrc="/assets/ytu-chess-logo-1.png" alt="" height="500" width="500" priority>
@@ -10,22 +7,22 @@
         <div class="rules">
             <div class="rules-title">Kurallar</div>
             <div class="rule-items">
-                <p>* Maç yapmak için giriş yapılmalı, hesap yoksa kayıt yapılmalıdır.</p>
-                <p>* Aynı anda 1 maç yapılabilir.</p>
-                <p>* 5 dakikadan uzun süre hamle yapmamak maçın iptal edilmesine yol açar.</p>
+                <p>* {{ 'main-page.rule1' | translate }}.</p>
+                <p>* {{ 'main-page.rule2' | translate }}.</p>
+                <p>* {{ 'main-page.rule3' | translate }}.</p>
             </div>
         </div>
         <div class="requests">
             <div class="requests-title">Ricalarımız</div>
             <div class="request-items">
-                <p>* Aynı anda 250 maça izin verdiğimiz için aktif olmadığınız zamanlarda çıkış yapmanız.</p>
-                <p>* Önerinizi ve hata/sorun bulmanı durumunda bize <a href="/contact-page">İletişim Sayfasından</a> bildirmeniz.</p>
+                <p>* {{ 'main-page.requeset1' | translate }}.</p>
+                <p>* {{ 'main-page.request2-part1' | translate }} <a href="/contact-page">{{ 'main-page.contact-page' | translate }}</a> {{ 'main-page.request2-part2' | translate }}.</p>
             </div>
         </div>
     </div>
     <div class="contributors">
         <div class="contributers-title">
-            <h1 style="color: white;">Katkıda Bulunanlar</h1>
+            <h1 style="color: white;">{{ 'main-page.contributers' | translate }}</h1>
         </div>
         <div class="people">
             <div class="name-surname">
@@ -33,8 +30,8 @@
                 <p style="color: white;">Ömer Faruk Aslan</p>
             </div>
             <div class="roles">
-                <p style="color: white;">Web Geliştirme / Tahta Algoritması Geliştirme</p>
-                <p style="color: white;">Web Geliştirme / Yapay Zeka</p>
+                <p style="color: white;">{{ 'main-page.web' | translate }} / {{ 'main-page.algorithm' | translate }}</p>
+                <p style="color: white;">{{ 'main-page.web' | translate }} / {{ 'main-page.ai' | translate }}</p>
             </div>
             <div class="link">
                 <p><a href="https://linktr.ee/ahmet.mahir.demirelli" target="_blank">LinkTree</a></p>
@@ -43,6 +40,6 @@
         </div>
     </div>
     <div class="buttons">
-        <button [routerLink]="['/start-page']">Oyna</button>
+        <button [routerLink]="['/start-page']">{{ 'main-page.play' | translate }}</button>
     </div>
 </div>

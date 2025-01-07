@@ -1,8 +1,21 @@
 {
     "public": {
-
+        "login": "Giriş Yap",
+        "sign-up": "Kayıt Ol"
     },
-    "mainpage": {
-        "message": "YTÜ Satranç Robotu"
+    "main-page": {
+        "message": "YTÜ Satranç Robotu",
+        "rule1": "Maç yapmak için giriş yapılmalı, hesap yoksa kayıt yapılmalıdır",
+        "rule2": "Aynı anda 1 maç yapılabilir",
+        "rule3": "5 dakikadan uzun süre hamle yapmamak maçın iptal edilmesine yol açar",
+        "request1": "Aynı anda 250 maça izin verdiğimiz için aktif olmadığınız zamanlarda çıkış yapmanız",
+        "request2-part1": "Önerinizi ve hata/sorun bulmanı durumunda bize",
+        "request2-part2": "bildirmeniz",
+        "contact-page": "İletişim Sayfasından",
+        "contributers": "Katkıda Bulunanlar",
+        "web": "Web Geliştirme",
+        "ai": "Yapay Zeka",
+        "algorithm": "Tahta Algoritması Geliştirme",
+        "play": "Oyna"
     }
 }
