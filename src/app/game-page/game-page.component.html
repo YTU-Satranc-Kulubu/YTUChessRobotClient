@@ -1,16 +1,20 @@
 <div class="main-container">
   <div class="chessboard">
-    <div
-      *ngFor="let row of pieces; let rowIndex = index"
-      class="row">
-      <div
-        *ngFor="let piece of row; let colIndex = index"
+    <div *ngFor="let row of pieces; let rowIndex = index" class="row">
+      <div *ngFor="let piece of row; let colIndex = index"
         class="cell"
-        [ngClass]="{'dark': (rowIndex + colIndex) % 2 !== 0, 
-                    'light': (rowIndex + colIndex) % 2 === 0, 
-                    'selected': selectedCell?.row === rowIndex && selectedCell?.col === colIndex}"
-        (click)="onCellClick(rowIndex, colIndex)">
-        <img *ngIf="piece" [src]="'/assets/' + piece + '.png'" [alt]="piece" />
+        [ngClass]="{
+          'dark': (rowIndex + colIndex) % 2 !== 0,
+          'light': (rowIndex + colIndex) % 2 === 0,
+          'selected': selectedCell?.row === rowIndex && selectedCell?.col === colIndex
+        }"
+        (click)="onCellClick(rowIndex, colIndex)"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop(rowIndex, colIndex)"
+      >
+        <img *ngIf="piece" [src]="'/assets/' + piece + '.png'" [alt]="piece"
+          [draggable]="true"
+          (dragstart)="onDragStart(rowIndex, colIndex, piece)" />
       </div>
     </div>
   </div>

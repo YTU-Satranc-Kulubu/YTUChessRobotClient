@@ -24,7 +24,7 @@ export class GamePageComponent implements OnInit{
     ['rook-white', 'knight-white', 'bishop-white', 'queen-white', 'king-white', 'bishop-white', 'knight-white', 'rook-white'],
   ];
   selectedCell: { row: number; col: number } | null = null;
-
+  draggedPiece: { row: number, col: number, piece: string } | null = null;
   constructor(private route: ActivatedRoute) {}
   
   ngOnInit(): void {
@@ -55,5 +55,23 @@ export class GamePageComponent implements OnInit{
       ['pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black'],
       ['rook-black', 'knight-black', 'bishop-black', 'king-black', 'queen-black', 'bishop-black', 'knight-black', 'rook-black'],
     ];
+  }
+
+  onDragStart(row: number, col: number, piece: string): void {
+    this.draggedPiece = { row, col, piece };
+  }
+
+  onDragOver(event: Event): void {
+    event.preventDefault(); // Bırakma işlemini mümkün kılmak için gerekli
+  }
+
+  onDrop(row: number, col: number): void {
+    if (this.draggedPiece) {
+      console.log(`Taş ${this.draggedPiece.piece} Row ${this.draggedPiece.row}, Col ${this.draggedPiece.col} => Row ${row}, Col ${col}`);
+      // Burada taşın bırakılacağı kareyi güncelleyebilirsiniz
+      this.pieces[this.draggedPiece.row][this.draggedPiece.col] = ''; // Eski konumu boşalt
+      this.pieces[row][col] = this.draggedPiece.piece; // Yeni konumu doldur
+      this.draggedPiece = null; // Taşı sıfırla
+    }
   }
 }
