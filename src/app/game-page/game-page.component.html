@@ -19,4 +19,29 @@
       </div>
     </div>
   </div>
+  <div class="clock-and-notation">
+    <div class="notation-container">
+      <div class="notation">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>White</th>
+              <th>Black</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let move of whiteMoves; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ move }}</td>
+              <td>{{ blackMoves[i] || '' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="clock">
+      <div class="time"> {{ time }} </div>
+    </div>
+  </div>
 </div>

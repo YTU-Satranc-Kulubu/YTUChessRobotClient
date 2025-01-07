@@ -9,6 +9,7 @@
 .chessboard {
     display: flex;
     flex-direction: column;
+    margin-top: 3%;
     width: 640px;
     height: 640px;
 }
@@ -45,4 +46,57 @@
     object-fit: contain;
     display: block;
     margin: auto;
+}
+
+.clock-and-notation {
+    display: flex;
+    flex-direction: column;
+    border-style: outset;
+    margin-left: 50px;
+    margin-top: 8%;
+    width: 300px;
+    height: 500px;
+}
+
+.notation-container{
+    width: 100%;
+    height: 400px;
+}
+
+.notation {
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.2;
+}
+  
+.notation table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.notation th, .notation td {
+    color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: auto;
+    vertical-align: middle;
+}
+  
+.notation td {
+    word-wrap: break-word;
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    border-top: 3px outset #ccc;
+}
+
+.time{
+    color: white;
+    font-size: 70px;
 }

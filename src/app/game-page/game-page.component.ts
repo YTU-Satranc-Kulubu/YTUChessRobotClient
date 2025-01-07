@@ -1,5 +1,5 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,13 +7,17 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [NgClass, NgFor, NgIf],
   templateUrl: './game-page.component.html',
-  styleUrl: './game-page.component.css'
+  styleUrls: ['./game-page.component.css']
 })
-export class GamePageComponent implements OnInit{
+export class GamePageComponent implements OnInit, OnDestroy {
   gameId: string | null = null;
-  isPlayerWhite: boolean = true;
+  time: string = '05:00'; // Başlangıç süresi
+  private timer: any;
+  isPlayerWhite: boolean = true; // Beyaz oyuncu başlıyor
   rows = Array(8).fill(0); // 8 satır
   cols = Array(8).fill(0); // 8 sütun
+  whiteMoves: string[] = [];
+  blackMoves: string[] = [];
   pieces: string[][] = [
     ['rook-black', 'knight-black', 'bishop-black', 'queen-black', 'king-black', 'bishop-black', 'knight-black', 'rook-black'],
     ['pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black'],
@@ -24,43 +28,51 @@ export class GamePageComponent implements OnInit{
     ['pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white'],
     ['rook-white', 'knight-white', 'bishop-white', 'queen-white', 'king-white', 'bishop-white', 'knight-white', 'rook-white'],
   ];
-  pieceToMove: { row: number; col: number } = {row: -1, col: -1};
-  moveToSquare: { row: number; col: number } = {row: -1, col: -1};
+  pieceToMove: { row: number; col: number } = { row: -1, col: -1 };
+  moveToSquare: { row: number; col: number } = { row: -1, col: -1 };
+  currentPlayer: 'white' | 'black' = 'white'; // Sıra hangi oyuncuda?
+
   constructor(private route: ActivatedRoute) {}
-  
+
   ngOnInit(): void {
     // URL'deki GameId parametresini al
     this.gameId = this.route.snapshot.paramMap.get('GameId');
     console.log('GameId:', this.gameId);
-
+    this.whiteMoves = ["e4", "Af3", "Fb5", "Fxc6", "0-0"];
+    this.blackMoves = ["e5", "Ac6", "a6", "bxc6", "Af6"];
     // get the game info
 
-    if (!this.isPlayerWhite){
+    if (!this.isPlayerWhite) {
       this.initializeBlackBoard();
+    }
+    this.startTimer();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timer) {
+      clearInterval(this.timer); // Component destroy olduğunda timer'ı temizle
     }
   }
 
   onCellHoldStart(row: number, col: number): void {
-    if (this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){
+    if (this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")) {
       this.pieceToMove = { row, col };
     }
   }
 
   onClick(row: number, col: number): void {
-    if(this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){   // kendi taşının olduğu bir kareye mi tıkladı
-      this.pieceToMove = {row, col};
+    if (this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")) {   // kendi taşının olduğu bir kareye mi tıkladı
+      this.pieceToMove = { row, col };
       console.log(`Kendi taşına tıkladı [${row}][${col}]`);
-    }
-    else if(this.pieceToMove.row != -1){  // seçili taş var, hamle yapılacak kare seçiliyor
-      this.moveToSquare = {row, col};
+    } else if (this.pieceToMove.row != -1) {  // seçili taş var, hamle yapılacak kare seçiliyor
+      this.moveToSquare = { row, col };
       console.log(`Hamle yapılacak kareye tıkladı [${row}][${col}]`);
-       // hamle geçerli mi vs.
     }
   }
-  
+
   onDragStart(row: number, col: number, piece: string): void {
-    if(this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){   // kendi taşının olduğu bir kareye mi tıkladı
-      this.pieceToMove = {row, col};
+    if (this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")) {   // kendi taşının olduğu bir kareye mi tıkladı
+      this.pieceToMove = { row, col };
       console.log(`Kendi taşına sürüklemeye başladı [${row}][${col}]`);
     }
   }
@@ -70,24 +82,49 @@ export class GamePageComponent implements OnInit{
   }
 
   onDrop(row: number, col: number): void {
-    if(this.pieceToMove.row != -1){ // seçili taş var
-      if(this.pieceToMove.row == row && this.pieceToMove.col == col){
-        this.pieceToMove = {row: -1, col: -1};
-        this.moveToSquare = {row: -1, col: -1};
+    if (this.pieceToMove.row != -1) { // seçili taş var
+      if (this.pieceToMove.row == row && this.pieceToMove.col == col) {
+        this.pieceToMove = { row: -1, col: -1 };
+        this.moveToSquare = { row: -1, col: -1 };
         console.log("Aldığı yere bıraktı");
-      }
-      else{
-        this.moveToSquare = {row, col};
+      } else {
+        this.moveToSquare = { row, col };
         console.log(`Hamle yapılacak kareye bıraktı [${row}][${col}]`);
-        // hamle geçerli mi vs.
-        //this.pieces[this.pieceToMove.row][this.pieceToMove.col] = ''; // Eski konumu boşalt
-        //this.pieces[row][col] = this.pieceToMove.piece; // Yeni konumu doldur
-        //this.pieceToMove = {row: -1, col: -1, piece: ''}; // Taşı sıfırla
       }
     }
   }
 
-  initializeBlackBoard(){
+  startTimer(): void {
+    let minutes = Number(this.time.split(':')[0]);
+    let seconds = Number(this.time.split(':')[1]);
+
+    this.timer = setInterval(() => {
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(this.timer); // Zaman bittiğinde timer'ı durdur
+        } 
+        else {
+          minutes--;
+          seconds = 59;
+        }
+      } 
+      else {
+        seconds--;
+      }
+
+      this.time = `${this.formatTime(minutes)}:${this.formatTime(seconds)}`;
+
+      if (minutes === 0 && seconds === 0) {
+       // maçı bitir
+      }
+    }, 1000);
+  }
+
+  formatTime(unit: number): string {
+    return unit < 10 ? '0' + unit : unit.toString();
+  }
+
+  initializeBlackBoard() {
     this.pieces = [
       ['rook-white', 'knight-white', 'bishop-white', 'king-white', 'queen-white', 'bishop-white', 'knight-white', 'rook-white'],
       ['pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white'],
