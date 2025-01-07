@@ -6,9 +6,10 @@
         [ngClass]="{
           'dark': (rowIndex + colIndex) % 2 !== 0,
           'light': (rowIndex + colIndex) % 2 === 0,
-          'selected': selectedCell?.row === rowIndex && selectedCell?.col === colIndex
+          'selected': pieceToMove.row === rowIndex && pieceToMove.col === colIndex
         }"
-        (click)="onCellClick(rowIndex, colIndex)"
+        (mousedown)="onCellHoldStart(rowIndex, colIndex)"
+        (click)="onClick(rowIndex, colIndex)"
         (dragover)="onDragOver($event)"
         (drop)="onDrop(rowIndex, colIndex)"
       >

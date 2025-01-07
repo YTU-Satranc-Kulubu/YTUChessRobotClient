@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GamePageComponent implements OnInit{
   gameId: string | null = null;
+  isPlayerWhite: boolean = true;
   rows = Array(8).fill(0); // 8 satır
   cols = Array(8).fill(0); // 8 sütun
   pieces: string[][] = [
@@ -23,8 +24,8 @@ export class GamePageComponent implements OnInit{
     ['pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white', 'pawn-white'],
     ['rook-white', 'knight-white', 'bishop-white', 'queen-white', 'king-white', 'bishop-white', 'knight-white', 'rook-white'],
   ];
-  selectedCell: { row: number; col: number } | null = null;
-  draggedPiece: { row: number, col: number, piece: string } | null = null;
+  pieceToMove: { row: number; col: number } = {row: -1, col: -1};
+  moveToSquare: { row: number; col: number } = {row: -1, col: -1};
   constructor(private route: ActivatedRoute) {}
   
   ngOnInit(): void {
@@ -34,14 +35,56 @@ export class GamePageComponent implements OnInit{
 
     // get the game info
 
-    if (3 == 3){
+    if (!this.isPlayerWhite){
       this.initializeBlackBoard();
     }
   }
 
-  onCellClick(row: number, col: number): void {
-    console.log(`Clicked cell: Row ${row}, Col ${col}`);
-    this.selectedCell = { row, col };
+  onCellHoldStart(row: number, col: number): void {
+    if (this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){
+      this.pieceToMove = { row, col };
+    }
+  }
+
+  onClick(row: number, col: number): void {
+    if(this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){   // kendi taşının olduğu bir kareye mi tıkladı
+      this.pieceToMove = {row, col};
+      console.log(`Kendi taşına tıkladı [${row}][${col}]`);
+    }
+    else if(this.pieceToMove.row != -1){  // seçili taş var, hamle yapılacak kare seçiliyor
+      this.moveToSquare = {row, col};
+      console.log(`Hamle yapılacak kareye tıkladı [${row}][${col}]`);
+       // hamle geçerli mi vs.
+    }
+  }
+  
+  onDragStart(row: number, col: number, piece: string): void {
+    if(this.pieces[row][col].includes(this.isPlayerWhite ? "white" : "black")){   // kendi taşının olduğu bir kareye mi tıkladı
+      this.pieceToMove = {row, col};
+      console.log(`Kendi taşına sürüklemeye başladı [${row}][${col}]`);
+    }
+  }
+
+  onDragOver(event: Event): void {
+    event.preventDefault(); // Bırakma işlemini mümkün kılmak için gerekli
+  }
+
+  onDrop(row: number, col: number): void {
+    if(this.pieceToMove.row != -1){ // seçili taş var
+      if(this.pieceToMove.row == row && this.pieceToMove.col == col){
+        this.pieceToMove = {row: -1, col: -1};
+        this.moveToSquare = {row: -1, col: -1};
+        console.log("Aldığı yere bıraktı");
+      }
+      else{
+        this.moveToSquare = {row, col};
+        console.log(`Hamle yapılacak kareye bıraktı [${row}][${col}]`);
+        // hamle geçerli mi vs.
+        //this.pieces[this.pieceToMove.row][this.pieceToMove.col] = ''; // Eski konumu boşalt
+        //this.pieces[row][col] = this.pieceToMove.piece; // Yeni konumu doldur
+        //this.pieceToMove = {row: -1, col: -1, piece: ''}; // Taşı sıfırla
+      }
+    }
   }
 
   initializeBlackBoard(){
@@ -55,23 +98,5 @@ export class GamePageComponent implements OnInit{
       ['pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black', 'pawn-black'],
       ['rook-black', 'knight-black', 'bishop-black', 'king-black', 'queen-black', 'bishop-black', 'knight-black', 'rook-black'],
     ];
-  }
-
-  onDragStart(row: number, col: number, piece: string): void {
-    this.draggedPiece = { row, col, piece };
-  }
-
-  onDragOver(event: Event): void {
-    event.preventDefault(); // Bırakma işlemini mümkün kılmak için gerekli
-  }
-
-  onDrop(row: number, col: number): void {
-    if (this.draggedPiece) {
-      console.log(`Taş ${this.draggedPiece.piece} Row ${this.draggedPiece.row}, Col ${this.draggedPiece.col} => Row ${row}, Col ${col}`);
-      // Burada taşın bırakılacağı kareyi güncelleyebilirsiniz
-      this.pieces[this.draggedPiece.row][this.draggedPiece.col] = ''; // Eski konumu boşalt
-      this.pieces[row][col] = this.draggedPiece.piece; // Yeni konumu doldur
-      this.draggedPiece = null; // Taşı sıfırla
-    }
   }
 }
