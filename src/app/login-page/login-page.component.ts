@@ -16,10 +16,8 @@ export class LoginPageComponent {
   email: string = "";
   password: string = "";
   errorMessage: string | null = null;
-  constructor(private languageService: LanguageService, private translate: TranslateService) {}
-  changeLanguage(lang: string): void {
-    this.languageService.setLanguage(lang);
-  }
+
+  constructor(private translate: TranslateService) {}
 
   onLogin(){
     this.errorMessage = null;

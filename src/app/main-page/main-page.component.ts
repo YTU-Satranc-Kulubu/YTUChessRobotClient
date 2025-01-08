@@ -12,8 +12,4 @@ import { LanguageService } from '../services/language.service';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
-  constructor(private languageService: LanguageService) {}
-  changeLanguage(lang: string): void {
-    this.languageService.setLanguage(lang);
-  }
 }

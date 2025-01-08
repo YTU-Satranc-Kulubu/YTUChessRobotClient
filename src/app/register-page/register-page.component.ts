@@ -25,13 +25,9 @@ export class RegisterPageComponent {
     isDeleted: false,
   };
   confirmPassword: string = '';
-  constructor(private languageService: LanguageService, private translate: TranslateService) {}
-  changeLanguage(lang: string): void {
-    this.languageService.setLanguage(lang);
-  }
+  constructor(private translate: TranslateService) {}
   onRegister(){
     this.errorMessage = null;
-    debugger
     if(!this.newUser.name.trim() || !this.newUser.surname.trim() || !this.newUser.userName.trim() || !this.newUser.email.trim() ||
       !this.newUser.password.trim() || !this.confirmPassword.trim()){
         this.setErrorMessage('public.empty-field-err');
