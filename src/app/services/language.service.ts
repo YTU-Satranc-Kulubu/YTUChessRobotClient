@@ -9,7 +9,8 @@ export class LanguageService {
   private defaultLang = 'tr';
 
   constructor(private translate: TranslateService) {
-    this.setLanguage(this.defaultLang);
+    const savedLang = this.getSavedLang();
+    this.setLanguage(savedLang || this.defaultLang);
   }
 
   setLanguage(lang: string): void {

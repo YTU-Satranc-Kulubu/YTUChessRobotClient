@@ -1,7 +1,7 @@
 <div class="main-container">
     <div class="title">{{ 'main-page.message' | translate }}</div>
     <div class="buttons">
-        <select class="language-selector" (change)="changeLanguage($event)">
+        <select class="language-selector" [value]="currentLanguage" (change)="changeLanguage($event)">
             <option value="tr">Türkçe</option>
             <option value="en">English</option>
         </select>
