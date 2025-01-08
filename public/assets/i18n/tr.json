@@ -8,6 +8,8 @@
     },
     "main-page": {
         "message": "YTÜ Satranç Robotu",
+        "rules": "Kurallar",
+        "asks": "Ricalarımız",
         "rule1": "Maç yapmak için giriş yapılmalı, hesap yoksa kayıt yapılmalıdır",
         "rule2": "Aynı anda 1 maç yapılabilir",
         "rule3": "5 dakikadan uzun süre hamle yapmamak maçın iptal edilmesine yol açar",
@@ -32,7 +34,6 @@
         "user-name": "Kullanıcı Adı",
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
-        
         "pass-doesnt-match-err": "Şifreler eşleşmiyor"
     }
 }

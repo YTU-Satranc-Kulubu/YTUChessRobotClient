@@ -8,6 +8,8 @@
     },
     "main-page": {
         "message": "YTU Chess Robot",
+        "rules": "Rules",
+        "asks": "What We Ask",
         "rule1": "To play a match, you must log in; if you don't have an account, you need to register.",
         "rule2": "Only one match can be played at a time.",
         "rule3": "Not making a move for more than 5 minutes will result in the match being canceled.",
