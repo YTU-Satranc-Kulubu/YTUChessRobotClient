@@ -24,5 +24,17 @@
         "forgot": "Forgot my password",
         "no-account": "Don't have an account",
         "empty-field-err": "Fields can not be empty"
+    },
+    "register-page": {
+        "register": "Register",
+        "name": "Name",
+        "surname": "Surname",
+        "user-name": "User Name",
+        "email": "Email",
+        "password": "Password",
+        "confirm-password": "Password Again",
+        "already-account": "Already have an account?",
+        "empty-field-err": "Fields can not be empty",
+        "pass-doesnt-match-err": "Passwords doesn't match"
     }
 }
