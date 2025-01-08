@@ -24,7 +24,7 @@ export class LoginPageComponent {
   onLogin(){
     this.errorMessage = null;
     if(this.email.match("") || this.password.match("")){
-      this.setErrorMessage('login-page.empty-field-err');
+      this.setErrorMessage('public.empty-field-err');
     }
   }
 

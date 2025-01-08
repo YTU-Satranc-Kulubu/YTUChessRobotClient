@@ -34,7 +34,7 @@ export class RegisterPageComponent {
     debugger
     if(!this.newUser.name.trim() || !this.newUser.surname.trim() || !this.newUser.userName.trim() || !this.newUser.email.trim() ||
       !this.newUser.password.trim() || !this.confirmPassword.trim()){
-        this.setErrorMessage('register-page.empty-field-err');
+        this.setErrorMessage('public.empty-field-err');
     }
     else if(this.newUser.password != this.confirmPassword){
       this.setErrorMessage('register-page.pass-doesnt-match-err');

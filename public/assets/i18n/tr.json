@@ -1,7 +1,10 @@
 {
     "public": {
         "login": "Giriş Yap",
-        "sign-up": "Kayıt Ol"
+        "sign-up": "Kayıt Ol",
+        "empty-field-err": "Alanlar boş bırakılamaz",
+        "email": "Mail",
+        "password": "Şifre"
     },
     "main-page": {
         "message": "YTÜ Satranç Robotu",
@@ -19,22 +22,17 @@
         "play": "Oyna"
     },
     "login-page": {
-        "email": "Mail",
-        "password": "Şifre",
         "forgot": "Şifremi unuttum",
-        "no-account": "Hesabınız yoksa",
-        "empty-field-err": "Alanlar boş bırakılamaz"
+        "no-account": "Hesabınız yoksa"
     },
     "register-page": {
         "register": "Kayıt Ol",
         "name": "Ad",
         "surname": "Soyad",
         "user-name": "Kullanıcı Adı",
-        "email": "Mail",
-        "password": "Şifre",
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
-        "empty-field-err": "Alanlar boş bırakılamaz",
+        
         "pass-doesnt-match-err": "Şifreler eşleşmiyor"
     }
 }

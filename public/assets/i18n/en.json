@@ -1,7 +1,10 @@
 {
     "public": {
         "login": "Login",
-        "sign-up": "Signup"
+        "sign-up": "Signup",
+        "empty-field-err": "Fields can not be empty",
+        "email": "Email",
+        "password": "Password"
     },
     "main-page": {
         "message": "YTU Chess Robot",
@@ -19,22 +22,16 @@
         "play": "Play"
     },
     "login-page": {
-        "email": "Email",
-        "password": "Password",
         "forgot": "Forgot my password",
-        "no-account": "Don't have an account",
-        "empty-field-err": "Fields can not be empty"
+        "no-account": "Don't have an account"
     },
     "register-page": {
         "register": "Register",
         "name": "Name",
         "surname": "Surname",
         "user-name": "User Name",
-        "email": "Email",
-        "password": "Password",
         "confirm-password": "Password Again",
         "already-account": "Already have an account?",
-        "empty-field-err": "Fields can not be empty",
         "pass-doesnt-match-err": "Passwords doesn't match"
     }
 }
