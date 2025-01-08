@@ -17,5 +17,12 @@
         "ai": "Yapay Zeka",
         "algorithm": "Tahta Algoritması Geliştirme",
         "play": "Oyna"
+    },
+    "login-page": {
+        "email": "Mail",
+        "password": "Şifre",
+        "forgot": "Şifremi unuttum",
+        "no-account": "Hesabınız yoksa",
+        "empty-field-err": "Alanlar boş bırakılamaz"
     }
 }

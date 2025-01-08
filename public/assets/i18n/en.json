@@ -17,5 +17,12 @@
         "ai": "AI",
         "algorithm": "Board Algorithm",
         "play": "Play"
+    },
+    "login-page": {
+        "email": "Email",
+        "password": "Password",
+        "forgot": "Forgot my password",
+        "no-account": "Don't have an account",
+        "empty-field-err": "Fields can not be empty"
     }
 }
