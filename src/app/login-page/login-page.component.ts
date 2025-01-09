@@ -16,9 +16,22 @@ export class LoginPageComponent {
   email: string = "";
   password: string = "";
   errorMessage: string | null = null;
-
+  isMobile: boolean = false;
   constructor(private translate: TranslateService) {}
 
+  ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
   onLogin(){
     this.errorMessage = null;
     if(this.email.match("") || this.password.match("")){
