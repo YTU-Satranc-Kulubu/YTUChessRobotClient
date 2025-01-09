@@ -1,3 +1,3 @@
 # YTUChessRobotClient
 
-Karşılama sayfası kabaca kodlandı
+Kullılacak sayfalar kabaca kodlandı
