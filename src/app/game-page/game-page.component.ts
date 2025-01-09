@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GamePageComponent implements OnInit, OnDestroy {
   gameId: string | null = null;
-  time: string = '05:00'; // Başlangıç süresi
+  time: string = '03:00'; // Başlangıç süresi
   private timer: any;
   isPlayerWhite: boolean = true; // Beyaz oyuncu başlıyor
   rows = Array(8).fill(0); // 8 satır
