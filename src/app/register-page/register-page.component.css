@@ -1,11 +1,17 @@
 .main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.register-container {
   background-color: #2e2e2e;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   max-width: 400px;
   width: 30%;
-  margin-left: 35%;
 }
   
 h1 {
@@ -88,4 +94,12 @@ a {
   
 a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-container{
+    margin: 0;
+    margin-top: 10%;
+    width: 100%;
+  }
 }

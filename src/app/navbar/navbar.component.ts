@@ -2,12 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { NgIf, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [TranslateModule, RouterLink, NgIf],
+  imports: [TranslateModule, RouterLink, NgIf, NgOptimizedImage],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

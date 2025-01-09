@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css'
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent implements OnInit, OnDestroy {
   errorMessage: string | null = null;
   newUser: User = {
     id: 0,
@@ -25,7 +25,21 @@ export class RegisterPageComponent {
     isDeleted: false,
   };
   confirmPassword: string = '';
+  isMobile: boolean = false;
   constructor(private translate: TranslateService) {}
+  ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
   onRegister(){
     this.errorMessage = null;
     if(!this.newUser.name.trim() || !this.newUser.surname.trim() || !this.newUser.userName.trim() || !this.newUser.email.trim() ||
