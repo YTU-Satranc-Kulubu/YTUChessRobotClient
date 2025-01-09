@@ -21,6 +21,15 @@
 .start-game-button {
     width: 200px;
     height: 50px;
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: aquamarine;
+}
+
+@media (max-width: 768px) {
+    .selectors{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+    }
 }

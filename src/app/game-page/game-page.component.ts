@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game-page.component.css']
 })
 export class GamePageComponent implements OnInit, OnDestroy {
+  isMobile: boolean = false
   gameId: string | null = null;
   time: string = '03:00'; // Başlangıç süresi
   private timer: any;
@@ -35,6 +36,9 @@ export class GamePageComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      this.checkIfMobile();
+    });
     // URL'deki GameId parametresini al
     this.gameId = this.route.snapshot.paramMap.get('GameId');
     console.log('GameId:', this.gameId);
@@ -47,11 +51,16 @@ export class GamePageComponent implements OnInit, OnDestroy {
     }
     this.startTimer();
   }
-
-  ngOnDestroy(): void {
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.checkIfMobile();
+    });
     if (this.timer) {
       clearInterval(this.timer); // Component destroy olduğunda timer'ı temizle
     }
+  }
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
   }
 
   onCellHoldStart(row: number, col: number): void {

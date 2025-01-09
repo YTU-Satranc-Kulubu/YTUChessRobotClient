@@ -1,4 +1,7 @@
 <div class="main-container">
+  <div class="clock" *ngIf="isMobile">
+    <div class="time"> {{ time }} </div>
+  </div>
   <div class="chessboard">
     <div *ngFor="let row of pieces; let rowIndex = index" class="row">
       <div *ngFor="let piece of row; let colIndex = index"
@@ -40,7 +43,7 @@
         </table>
       </div>
     </div>
-    <div class="clock">
+    <div class="clock" *ngIf="!isMobile">
       <div class="time"> {{ time }} </div>
     </div>
   </div>

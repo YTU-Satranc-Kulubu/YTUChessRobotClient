@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +9,22 @@ import { Router } from '@angular/router';
   templateUrl: './start-page.component.html',
   styleUrl: './start-page.component.css'
 })
-export class StartPageComponent {
+export class StartPageComponent implements OnInit, OnDestroy{
+  isMobile: boolean = false;
   constructor(private router: Router) { }
+  ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
   StartGame(color: string, time: string) {
     if (color.match("Random")){
       const randomNumber = Math.random() < 0.5 ? 1 : 2;
