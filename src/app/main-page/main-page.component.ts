@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import { RouterLink } from '@angular/router';
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
@@ -11,5 +11,19 @@ import { LanguageService } from '../services/language.service';
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit, OnDestroy {
+  isMobile: boolean = false;
+  ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.checkIfMobile();
+    });
+  }
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
 }

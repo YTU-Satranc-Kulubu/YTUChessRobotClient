@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="title">{{ 'main-page.message' | translate }}</div>
-    <div class="buttons">
+    <div class="buttons" *ngIf="!isMobile">
         <select class="language-selector" [value]="currentLanguage" (change)="changeLanguage($event)">
             <option value="tr">Türkçe</option>
             <option value="en">English</option>
@@ -11,5 +11,9 @@
         <button class="sign-up-button" [routerLink]="['/sign-up']">
             {{ 'public.sign-up' | translate }}
         </button>
+    </div>
+    <div class="buttons" *ngIf="isMobile">
+        <menu>
+        </menu>
     </div>
 </div>
