@@ -5,11 +5,13 @@ import { GamePageComponent } from './game-page/game-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
     {path: 'start-page', component: StartPageComponent},
     {path: 'play/:GameId', component: GamePageComponent},
     {path: 'login', component: LoginPageComponent},
     {path: 'sign-up', component: RegisterPageComponent},
-    {path: 'secret-login', component: AdminLoginPageComponent}
+    {path: 'secret-login', component: AdminLoginPageComponent},
+    {path: 'user-page/:UserId', component: UserPageComponent}
 ];

@@ -5,6 +5,10 @@
         "empty-field-err": "Fields can not be empty",
         "email": "Email",
         "password": "Password",
+        "name": "Name",
+        "surname": "Surname",
+        "user-name": "User Name",
+        "gender": "Gender",
         "email-code": "Code",
         "verify": "Verify"
     },
@@ -31,11 +35,12 @@
     },
     "register-page": {
         "register": "Register",
-        "name": "Name",
-        "surname": "Surname",
-        "user-name": "User Name",
         "confirm-password": "Password Again",
         "already-account": "Already have an account?",
         "pass-doesnt-match-err": "Passwords doesn't match"
+    },
+    "user-page": {
+        "update": "Update",
+        "delete": "Delete"
     }
 }

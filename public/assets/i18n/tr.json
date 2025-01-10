@@ -5,6 +5,10 @@
         "empty-field-err": "Alanlar boş bırakılamaz",
         "email": "Mail",
         "password": "Şifre",
+        "name": "Ad",
+        "surname": "Soyad",
+        "user-name": "Kullanıcı Adı",
+        "gender": "Cinsiyet",
         "email-code": "Kod",
         "verify": "Doğrula"
     },
@@ -31,11 +35,12 @@
     },
     "register-page": {
         "register": "Kayıt Ol",
-        "name": "Ad",
-        "surname": "Soyad",
-        "user-name": "Kullanıcı Adı",
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
         "pass-doesnt-match-err": "Şifreler eşleşmiyor"
+    },
+    "user-page": {
+        "update": "Güncelle",
+        "delete": "Sil"
     }
 }
