@@ -13,7 +13,8 @@ import { NgIf, NgOptimizedImage } from '@angular/common';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   currentLanguage: string = '';
-  isMobile = false;
+  isMobile: boolean = false;
+  menuOpen: boolean = false;
   constructor(private languageService: LanguageService) {}
   ngOnInit(): void {
     this.currentLanguage = this.languageService.getSavedLang() || 'tr';

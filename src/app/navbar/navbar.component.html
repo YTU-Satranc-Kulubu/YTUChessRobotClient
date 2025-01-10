@@ -16,7 +16,19 @@
         </button>
     </div>
     <div class="buttons" *ngIf="isMobile">
-        <menu>
-        </menu>
+        <button class="menu-button" (click)="menuOpen = !menuOpen">&#9776;</button>
+        <div class="side-menu" [class.open]="menuOpen">
+            <button class="close-button" (click)="menuOpen = !menuOpen">&#10005;</button>
+            <select class="language-selector" [value]="currentLanguage" (change)="changeLanguage($event)">
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+            </select>
+            <button class="login-button" (click)="menuOpen = !menuOpen" [routerLink]="['/login']">
+                {{ 'public.login' | translate }}
+            </button>
+            <button class="sign-up-button" (click)="menuOpen = !menuOpen" [routerLink]="['/sign-up']">
+                {{ 'public.sign-up' | translate }}
+            </button>
+        </div>
     </div>
 </div>

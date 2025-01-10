@@ -51,6 +51,42 @@
     background-color: rgb(132 220 249);
 }
 
+.menu-button{
+    background-color: rgb(132 220 249);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .title{
         display: flex;
@@ -60,5 +96,8 @@
         font-size: large;
         width: 60%;
         margin-left: -2%;
+    }
+    .mobile-menu{
+        
     }
 }
