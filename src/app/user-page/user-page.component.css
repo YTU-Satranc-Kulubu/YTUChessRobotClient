@@ -80,3 +80,15 @@ button:hover {
     margin-left: 3%;
     background-color: #6a5acd;
 }
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .user-informations{
+      width: 95%;
+      margin: 0;
+      margin-left: 2.5%;
+    }
+  }
