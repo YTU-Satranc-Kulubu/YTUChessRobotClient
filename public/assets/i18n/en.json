@@ -4,7 +4,9 @@
         "sign-up": "Signup",
         "empty-field-err": "Fields can not be empty",
         "email": "Email",
-        "password": "Password"
+        "password": "Password",
+        "email-code": "Code",
+        "verify": "Verify"
     },
     "main-page": {
         "message": "YTU Chess Robot",

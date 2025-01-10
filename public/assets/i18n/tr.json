@@ -4,7 +4,9 @@
         "sign-up": "Kayıt Ol",
         "empty-field-err": "Alanlar boş bırakılamaz",
         "email": "Mail",
-        "password": "Şifre"
+        "password": "Şifre",
+        "email-code": "Kod",
+        "verify": "Doğrula"
     },
     "main-page": {
         "message": "YTÜ Satranç Robotu",

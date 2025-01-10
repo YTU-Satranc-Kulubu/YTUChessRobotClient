@@ -1,0 +1,119 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .login-container{
+    background-color: #2e2e2e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 30%;
+    margin-top: 5%;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #cccccc;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: #6a5acd;
+  }
+  
+  .error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .login-button, .verify-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #6a5acd;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #5a4bbd;
+  }
+  
+  .forgot-password p,
+  .signup-link p {
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  p{
+    color: white;
+  }
+  
+  a {
+    color: #6a5acd;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .email-code input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+  }
+
+  .email-code input:focus{
+    outline: none;
+    border-color: #6a5acd;
+  }
+  
+  @media (max-width: 768px) {
+    .login-container{
+      margin: 0;
+      margin-top: 10%;
+      width: 100%;
+    }
+  }
