@@ -1,0 +1,32 @@
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 2fr 1fr 2fr / 1fr 1fr;
+}
+
+.stat-box {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.stat1{
+  background-color: aliceblue;
+}
+
+.stat2{
+  background-color: aqua;
+}
+
+.stat3{
+  background-color: palegreen;
+}
+
+.stat4{
+  background-color: purple;
+}
+
+.stat5{
+  background-color: black;
+}
