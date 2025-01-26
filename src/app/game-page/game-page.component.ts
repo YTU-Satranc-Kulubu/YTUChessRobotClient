@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { PossibleMovesService } from '../services/move-services/possible-moves.service';
 import { Board } from '../models/common-models/board-model';
 import { Move } from '../models/common-models/move-model';
+import { Game } from '../models/ui-models/game-model';
+import { AfterMoveService } from '../services/move-services/after-move.service';
+import { Square } from '../models/common-models/square-model';
 
 @Component({
   selector: 'app-game-page',
@@ -14,34 +17,40 @@ import { Move } from '../models/common-models/move-model';
 })
 export class GamePageComponent implements OnInit, OnDestroy {
   clientViewMatrix: number[][] = [];
-  board: Board = {
-    matrix: [
-      [12, 10, 11, 13, 14, 11, 10, 12],
-      [8,  8,  8,  8,  8,  8,  8,  8 ],
-      [0,  0,  0,  0,  0,  0,  0,  0 ],
-      [0,  0,  0,  0,  0,  0,  0,  0 ],
-      [0,  0,  0,  0,  0,  0,  0,  0 ],
-      [0,  0,  0,  0,  0,  0,  0,  0 ],
-      [1,  1,  1,  1,  1,  1,  1,  1 ],
-      [5,  3,  4,  6,  7,  4,  3,  5 ],
-      ],
-    isChecked: false,
-    isMate: false,
-    isWhiteKingMoved: false,
-    isBlackKingMoved: false,
-    isWhiteShortRookMoved: false,
-    isWhiteLongRookMoved: false,
-    isBlackShortRookMoved: false,
-    isBlackLongRookMoved: false,
-    whiteKing: {row: 7, col :4},
-    blackKing: {row: 0, col :4},
-    whiteCheckerOne: {row: -1, col : -1},
-    whiteCheckerTwo: {row: -1, col : -1},
-    blackCheckerOne: {row: -1, col : -1},
-    blackCheckerTwo: {row: -1, col : -1},
-    whitesPoints: 39,
-    blacksPoints: 39,
-  };
+  game: Game = {
+    board: {
+      matrix: [
+        [12, 10, 11, 13, 14, 11, 10, 12],
+        [8,  8,  8,  8,  8,  8,  8,  8 ],
+        [0,  0,  0,  0,  0,  0,  0,  0 ],
+        [0,  0,  0,  0,  0,  0,  0,  0 ],
+        [0,  0,  0,  0,  0,  0,  0,  0 ],
+        [0,  0,  0,  0,  0,  0,  0,  0 ],
+        [1,  1,  1,  1,  1,  1,  1,  1 ],
+        [5,  3,  4,  6,  7,  4,  3,  5 ],
+        ],
+      isChecked: false,
+      isMate: false,
+      isWhiteKingMoved: false,
+      isBlackKingMoved: false,
+      isWhiteShortRookMoved: false,
+      isWhiteLongRookMoved: false,
+      isBlackShortRookMoved: false,
+      isBlackLongRookMoved: false,
+      whiteKing: {row: 7, col :4},
+      blackKing: {row: 0, col :4},
+      whiteCheckerOne: {row: -1, col : -1},
+      whiteCheckerTwo: {row: -1, col : -1},
+      blackCheckerOne: {row: -1, col : -1},
+      blackCheckerTwo: {row: -1, col : -1},
+      whitePushed2Pawn: {row: -1, col: -1},
+      blackPushed2Pawn: {row: -1, col: -1},
+      whitesPoints: 39,
+      blacksPoints: 39,
+    },
+    whiteMoves: [],
+    blackMoves: []
+  }
 
   possibleMoves: Array<Move> = [];
 
@@ -54,11 +63,10 @@ export class GamePageComponent implements OnInit, OnDestroy {
   cols = Array(8).fill(0); // 8 sütun
   whiteMoves: string[] = [];
   blackMoves: string[] = [];
-  pieceToMove: { row: number; col: number } = { row: -1, col: -1 };
-  moveToSquare: { row: number; col: number } = { row: -1, col: -1 };
+  pieceToMove: Square = {row: -1, col: -1};
   currentPlayer: 'white' | 'black' = 'white'; // Sıra hangi oyuncuda?
 
-  constructor(private route: ActivatedRoute, private possibleMovesService: PossibleMovesService) {}
+  constructor(private route: ActivatedRoute, private possibleMovesService: PossibleMovesService, private afterMoveService: AfterMoveService) {}
 
   ngOnInit(): void {
     window.addEventListener('resize', () => {
@@ -72,7 +80,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
     // get the game info
 
     if (this.isPlayerWhite) {
-      this.clientViewMatrix = this.board.matrix;
+      this.clientViewMatrix = this.game.board.matrix;
     }
     else{
       this.initializeBlackBoard();
@@ -92,19 +100,24 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   onClick(row: number, col: number): void {
-    if (this.board.matrix[row][col] != 0 && ((this.isPlayerWhite && this.board.matrix[row][col] <= 7) || (!this.isPlayerWhite && this.board.matrix[row][col] >= 8))) {   // kendi taşının olduğu bir kareye mi tıkladı
+    if (this.game.board.matrix[row][col] != 0 && ((this.isPlayerWhite && this.game.board.matrix[row][col] <= 7) || (!this.isPlayerWhite && this.game.board.matrix[row][col] >= 8))) {   // kendi taşının olduğu bir kareye mi tıkladı
       this.pieceToMove = { row, col };
-      this.possibleMoves = this.possibleMovesService.GetPossibleMoves(this.pieceToMove, this.board);
-    } else if (this.pieceToMove.row != -1) {  // seçili taş var, hamle yapılacak kare seçiliyor
-      this.moveToSquare = { row, col };
-      console.log(`Hamle yapılacak kareye tıkladı [${row}][${col}]`);
+      this.possibleMoves = this.possibleMovesService.GetPossibleMoves(this.pieceToMove, this.game.board);
+    } 
+    else if (this.pieceToMove.row != -1) {
+      const moveToPlay: Move | null = this.getMove(row, col);
+      if(moveToPlay != null){
+        this.afterMoveService.UpdateGame(this.game, this.pieceToMove, moveToPlay);
+        this.possibleMoves = [];
+        this.pieceToMove = { row: -1, col: -1 };
+      }
     }
   }
 
   onDragStart(row: number, col: number): void {
-    if (this.board.matrix[row][col] != 0 && ((this.isPlayerWhite && this.board.matrix[row][col] <= 7) || (!this.isPlayerWhite && this.board.matrix[row][col] >= 8))) {   // kendi taşının olduğu bir kareye mi tıkladı
+    if (this.game.board.matrix[row][col] != 0 && ((this.isPlayerWhite && this.game.board.matrix[row][col] <= 7) || (!this.isPlayerWhite && this.game.board.matrix[row][col] >= 8))) {   // kendi taşının olduğu bir kareye mi tıkladı
       this.pieceToMove = { row, col };
-      this.possibleMoves = this.possibleMovesService.GetPossibleMoves(this.pieceToMove, this.board); 
+      this.possibleMoves = this.possibleMovesService.GetPossibleMoves(this.pieceToMove, this.game.board); 
     }
   }
 
@@ -113,16 +126,28 @@ export class GamePageComponent implements OnInit, OnDestroy {
   }
 
   onDrop(row: number, col: number): void {
-    if (this.pieceToMove.row != -1) { // seçili taş var
+    if (this.pieceToMove.row != -1) {
       if (this.pieceToMove.row == row && this.pieceToMove.col == col) {
         this.pieceToMove = { row: -1, col: -1 };
-        this.moveToSquare = { row: -1, col: -1 };
         this.possibleMoves = [];
-      } else {
-        this.moveToSquare = { row, col };
-        console.log(`Hamle yapılacak kareye bıraktı [${row}][${col}]`);
+      } 
+      else {
+        const moveToPlay: Move | null = this.getMove(row, col);
+        if(moveToPlay != null){
+          if(moveToPlay.message == "Upgrade"){
+            this.HandleUpgrade();
+          }
+
+          this.afterMoveService.UpdateGame(this.game, this.pieceToMove, moveToPlay);
+          this.possibleMoves = [];
+          this.pieceToMove = { row: -1, col: -1 };
+        }
       }
     }
+  }
+
+  private HandleUpgrade(){
+
   }
 
   startTimer(): void {
@@ -153,6 +178,15 @@ export class GamePageComponent implements OnInit, OnDestroy {
 
   formatTime(unit: number): string {
     return unit < 10 ? '0' + unit : unit.toString();
+  }
+
+  private getMove(row: number, col: number): Move | null{
+    for(const move of this.possibleMoves){
+      if(move.row == row && move.col == col){
+        return move;
+      }
+    }
+    return null;
   }
 
   isMovePossible(row: number, col: number): boolean {

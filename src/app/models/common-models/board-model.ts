@@ -16,6 +16,8 @@ export interface Board {
     whiteCheckerTwo: Square,
     blackCheckerOne: Square,
     blackCheckerTwo: Square,
+    whitePushed2Pawn: Square,
+    blackPushed2Pawn: Square,
     whitesPoints: number,
     blacksPoints: number,
 }

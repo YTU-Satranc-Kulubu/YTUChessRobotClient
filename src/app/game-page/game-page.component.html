@@ -34,10 +34,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let move of whiteMoves; let i = index">
+            <tr *ngFor="let move of game.whiteMoves; let i = index">
               <td>{{ i + 1 }}</td>
               <td>{{ move }}</td>
-              <td>{{ blackMoves[i] || '' }}</td>
+              <td>{{ game.blackMoves[i] }}</td>
             </tr>
           </tbody>
         </table>
