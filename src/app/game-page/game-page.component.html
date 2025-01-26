@@ -3,22 +3,22 @@
     <div class="time"> {{ time }} </div>
   </div>
   <div class="chessboard">
-    <div *ngFor="let row of pieces; let rowIndex = index" class="row">
+    <div *ngFor="let row of clientViewMatrix; let rowIndex = index" class="row">
       <div *ngFor="let piece of row; let colIndex = index"
         class="cell"
         [ngClass]="{
           'dark': (rowIndex + colIndex) % 2 !== 0,
           'light': (rowIndex + colIndex) % 2 === 0,
-          'selected': pieceToMove.row === rowIndex && pieceToMove.col === colIndex
+          'selected': pieceToMove.row === rowIndex && pieceToMove.col === colIndex,
+          'highlight': isMovePossible(rowIndex, colIndex)
         }"
-        (mousedown)="onCellHoldStart(rowIndex, colIndex)"
         (click)="onClick(rowIndex, colIndex)"
         (dragover)="onDragOver($event)"
         (drop)="onDrop(rowIndex, colIndex)"
       >
         <img *ngIf="piece" [src]="'/assets/' + piece + '.png'" [alt]="piece"
           [draggable]="true"
-          (dragstart)="onDragStart(rowIndex, colIndex, piece)" />
+          (dragstart)="onDragStart(rowIndex, colIndex)" />
       </div>
     </div>
   </div>

@@ -37,6 +37,10 @@
 
 .cell.selected {
     background-color: #21a23b; /* Seçilen kutunun arka plan rengi (örneğin sarı) */
+}
+
+.cell.highlight {
+    background-color: rgba(0, 102, 255, 0.5); /* Yeşil yarı saydam */
   }
 
 .cell img {
