@@ -30,6 +30,7 @@
                     <th>Rank</th>
                     <th>University</th>
                     <th>Score</th>
+                    <th>Info</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,7 @@
                     <td>{{ i + 1 }}</td>
                     <td>{{ player.universityName }}</td>
                     <td>{{ player.totalPoint }}</td>
+                    <td><img src="assets/info-icon.png" alt="uni-page" (click)="goToUniversityPage(player.universityName)"/></td>
                 </tr>
             </tbody>
         </table>

@@ -8,6 +8,7 @@ import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.com
 import { UserPageComponent } from './user-page/user-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { BestPageComponent } from './best-page/best-page.component';
+import { UniversityPlayersPageComponent } from './university-players-page/university-players-page.component';
 
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
@@ -18,5 +19,6 @@ export const routes: Routes = [
     {path: 'secret-login', component: AdminLoginPageComponent},
     {path: "secret-statistics", component: AdminPageComponent},
     {path: 'user-page/:UserId', component: UserPageComponent},
-    {path: 'best-players', component: BestPageComponent}
+    {path: 'best-players', component: BestPageComponent},
+    {path: 'university/:UniversityId', component: UniversityPlayersPageComponent}
 ];

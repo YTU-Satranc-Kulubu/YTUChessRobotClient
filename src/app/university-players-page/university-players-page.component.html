@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="title">
+        {{universityName}}
+    </div>
+    <table class="players-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of universityPlayers; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ player.userName }}</td>
+                <td>{{ player.totalPoint }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
