@@ -10,7 +10,8 @@
         "user-name": "Kullanıcı Adı",
         "gender": "Cinsiyet",
         "email-code": "Kod",
-        "verify": "Doğrula"
+        "verify": "Doğrula",
+        "best-players": "En İyi Oyuncular"
     },
     "main-page": {
         "message": "YTÜ Satranç Robotu",

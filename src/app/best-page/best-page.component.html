@@ -1,0 +1,44 @@
+<div class="main-container">
+    <div class="titles">
+        <div class="player-title">
+            Best 50 Players
+        </div>
+        <div class="university-title">
+            Best 50 Universities
+        </div>
+    </div>
+    <div class="tables">
+        <table class="players-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of bestPlayers; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ player.userName }}</td>
+                    <td>{{ player.totalPoint }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="universities-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>University</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of bestUniversities; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ player.universityName }}</td>
+                    <td>{{ player.totalPoint }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

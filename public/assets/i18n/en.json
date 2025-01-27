@@ -10,7 +10,8 @@
         "user-name": "User Name",
         "gender": "Gender",
         "email-code": "Code",
-        "verify": "Verify"
+        "verify": "Verify",
+        "best-players": "Best Players"
     },
     "main-page": {
         "message": "YTU Chess Robot",
