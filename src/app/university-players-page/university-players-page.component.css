@@ -15,8 +15,31 @@
     font-weight: bold;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 20px;
     color: white;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-button button{
+    border-radius: 10%;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.see-req-button button{
+    border-radius: 10%;
+    width: 200px;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .players-table {

@@ -2,6 +2,14 @@
     <div class="title">
         {{universityName}}
     </div>
+    <div class="button">
+        <div class="join-button" *ngIf="!isUniPlayer">
+            <button onclick="onJoinRequest()">Katıl</button>
+        </div>
+        <div class="see-req-button" *ngIf="isUniAdmin">
+            <button [routerLink]="['/join-requests/{{universityName}}']">Katılma İsteklerine Bak</button>
+        </div>  
+    </div>
     <table class="players-table">
         <thead>
             <tr>
