@@ -19,6 +19,6 @@ export const routes: Routes = [
     {path: 'secret-login', component: AdminLoginPageComponent},
     {path: "secret-statistics", component: AdminPageComponent},
     {path: 'user-page/:UserId', component: UserPageComponent},
-    {path: 'best-players', component: BestPageComponent},
+    {path: 'best/:type', component: BestPageComponent},
     {path: 'university/:UniversityId', component: UniversityPlayersPageComponent}
 ];

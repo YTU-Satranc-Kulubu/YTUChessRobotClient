@@ -40,7 +40,13 @@
         </div>
     </div>
     <div class="buttons">
-        <button [routerLink]="['/start-page']">{{ 'main-page.play' | translate }}</button>
-        <button [routerLink]="['/best-players']">{{ 'public.best-players' | translate }}</button>
+        <div class="two-button">
+            <button [routerLink]="['/best/player']">{{ 'public.best-players' | translate }}</button>
+            <button [routerLink]="['/best/university']">{{ 'main-page.best-universities' | translate }}</button>
+        </div>
+        <div class="two-button">
+            <button [routerLink]="['/start-page']">{{ 'main-page.play' | translate }}</button>
+            <button [routerLink]="['/find-university-team']">{{ 'main-page.find-your-uni' | translate }}</button>
+        </div>
     </div>
 </div>

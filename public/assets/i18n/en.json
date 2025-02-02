@@ -28,7 +28,9 @@
         "web": "Web Programming",
         "ai": "AI",
         "algorithm": "Board Algorithm",
-        "play": "Play"
+        "play": "Play",
+        "best-universities": "Best Universities",
+        "find-your-uni": "Find Your University"
     },
     "login-page": {
         "forgot": "Forgot my password",

@@ -28,7 +28,9 @@
         "web": "Web Geliştirme",
         "ai": "Yapay Zeka",
         "algorithm": "Tahta Algoritması Geliştirme",
-        "play": "Oyna"
+        "play": "Oyna",
+        "best-universities": "En İyi Üniversiteler",
+        "find-your-uni": "Üniversiteni Bul"
     },
     "login-page": {
         "forgot": "Şifremi unuttum",

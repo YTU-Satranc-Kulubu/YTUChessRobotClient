@@ -1,14 +1,14 @@
 <div class="main-container">
-    <div class="titles">
-        <div class="player-title">
+    <div class="title">
+        <div class="player-title" *ngIf="isPlayerView">
             Best 50 Players
         </div>
-        <div class="university-title">
+        <div class="university-title" *ngIf="!isPlayerView">
             Best 50 Universities
         </div>
     </div>
-    <div class="tables">
-        <table class="players-table">
+    <div class="table">
+        <table class="players-table" *ngIf="isPlayerView">
             <thead>
                 <tr>
                     <th>Rank</th>
@@ -24,7 +24,7 @@
                 </tr>
             </tbody>
         </table>
-        <table class="universities-table">
+        <table class="universities-table" *ngIf="!isPlayerView">
             <thead>
                 <tr>
                     <th>Rank</th>

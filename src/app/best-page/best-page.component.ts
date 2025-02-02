@@ -1,19 +1,26 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-best-page',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './best-page.component.html',
   styleUrl: './best-page.component.css'
 })
-export class BestPageComponent {
+export class BestPageComponent implements OnInit {
   bestPlayers: Array<{userName: string, totalPoint: number}> = [{userName: "AMD", totalPoint: 2}];
   bestUniversities: Array<{universityName: string, totalPoint: number}> = [{universityName: "AMD", totalPoint: 2}];
+  isPlayerView: boolean = false;
+  constructor(private router: Router, private route: ActivatedRoute){}
 
-  constructor(private router: Router){}
+  ngOnInit(): void {
+    this.route.url.subscribe(urlSegments => {
+      const lastSegment = urlSegments[urlSegments.length - 1]?.path;
+      this.isPlayerView = lastSegment === 'player';
+    });
+  }
 
   goToUniversityPage(universityName: string){
     const universityId = this.getUniversityId(universityName);

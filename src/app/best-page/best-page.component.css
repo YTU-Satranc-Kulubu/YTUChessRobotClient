@@ -2,14 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
 }
 
-.titles{
+.title{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -22,28 +21,16 @@
     color: white;
 }
 
-.player-title{
-    margin-left: 14%;
-}
-
-.university-title{
-    margin-right: 10%;
-}
-
-.tables{
+.table{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
-.players-table {
-    width: 42.5%;
-    border-collapse: collapse;
-}
-
-.universities-table{
-    width: 40%;
+.players-table, .universities-table{
+    width: 60%;
+    margin: 0;
     border-collapse: collapse;
 }
 
