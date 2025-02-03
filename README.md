@@ -26,12 +26,12 @@ YTUChessRobot'a bu link üzerinden erişebilirsiniz:
 
 1. **Projeyi klonla:**
    ```sh
-   Açıklama 1
+   git clone [https](https://github.com/YTU-Satranc-Kulubu/YTUChessRobotClient.git)
    ```
 
 2. **Node.js Kur:**
    ```sh
-   Açıklama 2
+   Şu linkten kurulumu yapabilirsiniz: https://nodejs.org/tr/download/current 
    ```
 
 3. **Angular cli kur:**
@@ -39,23 +39,17 @@ YTUChessRobot'a bu link üzerinden erişebilirsiniz:
    npm install -g @angular/cli
    ```
 
-4. **run npm install:**
+4. **Gereksinimleri yükle:**
    ```sh
    npm install
    ```
 
-5. **çalıştır:**
+5. **Projeyi çalıştır:**
    ```sh
    ng serve --open
    ```
 
-5. **aç:**
+6. **Tarayıcıda projeyi görüntüle:**
    ```sh
-   go to http://localhost:4200/
+   http://localhost:4200/
    ```
-
-
-
-### Notlar
-- Not 1
-- Not 2
