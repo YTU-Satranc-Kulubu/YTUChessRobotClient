@@ -24,15 +24,37 @@ YTUChessRobot'a bu link üzerinden erişebilirsiniz:
 
 ### Kurulum
 
-1. **Aşama 1:**
+1. **Projeyi klonla:**
    ```sh
    Açıklama 1
    ```
 
-2. **Aşama 2:**
+2. **Node.js Kur:**
    ```sh
    Açıklama 2
    ```
+
+3. **Angular cli kur:**
+   ```sh
+   npm install -g @angular/cli
+   ```
+
+4. **run npm install:**
+   ```sh
+   npm install
+   ```
+
+5. **çalıştır:**
+   ```sh
+   ng serve --open
+   ```
+
+5. **aç:**
+   ```sh
+   go to http://localhost:4200/
+   ```
+
+
 
 ### Notlar
 - Not 1
