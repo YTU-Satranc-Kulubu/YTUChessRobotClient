@@ -26,7 +26,7 @@ YTUChessRobot'a bu link üzerinden erişebilirsiniz:
 
 1. **Projeyi klonla:**
    ```sh
-   git clone [https](https://github.com/YTU-Satranc-Kulubu/YTUChessRobotClient.git)
+   git clone https://github.com/YTU-Satranc-Kulubu/YTUChessRobotClient.git
    ```
 
 2. **Node.js Kur:**
