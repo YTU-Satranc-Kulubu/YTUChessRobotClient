@@ -1,9 +1,9 @@
 ### YTUChessRobot Frontend
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; text-align: center;">
-  <img src="https://github.com/user-attachments/assets/4c269bf7-953a-44d1-aeb0-6b1ed6d970b9" alt="YtuLogo" width="200">
-  <img src="https://github.com/user-attachments/assets/234311e0-e875-4cb1-9182-533afe9cdd58" alt="RobotLogo" width="200">
-  <img src="https://github.com/user-attachments/assets/c2a3e334-db16-44e5-8142-1aea45d6aaff" alt="YtuChessLogo" width="200">
+  <img src="https://github.com/user-attachments/assets/8078e3d6-642e-4b24-9c75-4dcbe281bb10" alt="YtuLogo" width="200">
+  <img src="https://github.com/user-attachments/assets/c37d2371-6d4f-426e-852a-e418387d6cb7" alt="RobotLogo" width="200">
+  <img src="https://github.com/user-attachments/assets/096e1b28-c05b-4d38-a587-edb69c76c89e" alt="YtuChessLogo" width="200">
 </div>
 
 ## YTUChessRobot Hakkında
