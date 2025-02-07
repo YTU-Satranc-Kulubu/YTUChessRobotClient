@@ -10,6 +10,7 @@ import { BestPageComponent } from './best-page/best-page.component';
 import { UniversityPlayersPageComponent } from './university-players-page/university-players-page.component';
 import { PlayUserPageComponent } from './play-user-page/play-user-page.component';
 import { PlayRobotPageComponent } from './play-robot-page/play-robot-page.component';
+import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
@@ -22,5 +23,6 @@ export const routes: Routes = [
     {path: "secret-statistics", component: AdminPageComponent},
     {path: 'user-page/:UserId', component: UserPageComponent},
     {path: 'best/:type', component: BestPageComponent},
-    {path: 'university/:UniversityId', component: UniversityPlayersPageComponent}
+    {path: 'university/:UniversityId', component: UniversityPlayersPageComponent},
+    {path: 'contact-us', component: ContactUsPageComponent}
 ];

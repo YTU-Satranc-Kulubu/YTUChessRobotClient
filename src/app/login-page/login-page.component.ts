@@ -1,14 +1,12 @@
 import { Component, NgModule } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { LanguageService } from '../services/language.service';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [TranslateModule, FormsModule, NgIf, RouterLink],
+  imports: [TranslateModule, FormsModule, RouterLink],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
