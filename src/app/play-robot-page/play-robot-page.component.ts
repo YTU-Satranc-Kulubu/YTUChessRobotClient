@@ -1,22 +1,21 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Game } from '../models/ui-models/game-model';
+import { Move } from '../models/common-models/move-model';
+import { Square } from '../models/common-models/square-model';
 import { ActivatedRoute } from '@angular/router';
 import { PossibleMovesService } from '../services/move-services/possible-moves.service';
-import { Board } from '../models/common-models/board-model';
-import { Move } from '../models/common-models/move-model';
-import { Game } from '../models/ui-models/game-model';
 import { AfterMoveService } from '../services/move-services/after-move.service';
-import { Square } from '../models/common-models/square-model';
 
 @Component({
-  selector: 'app-game-page',
+  selector: 'app-play-robot-page',
   standalone: true,
   imports: [NgClass, NgFor, NgIf],
-  templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.css']
+  templateUrl: './play-robot-page.component.html',
+  styleUrl: './play-robot-page.component.css'
 })
-export class GamePageComponent implements OnInit, OnDestroy {
-  clientViewMatrix: number[][] = [];
+export class PlayRobotPageComponent implements OnInit, OnDestroy {
+clientViewMatrix: number[][] = [];
   game: Game = {
     board: {
       matrix: [
