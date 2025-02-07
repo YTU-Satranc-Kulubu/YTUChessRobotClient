@@ -1,20 +1,37 @@
 <div class="main-container">
-    <img ngSrc="/assets/ytu-chess-robot-logo-1.png" alt="" height="500" width="500" priority>
-    <div class="selectors">
-        <select #colorSelector class="color-selector">
-            <option value="Random">Rastgele</option>
-            <option value="White">Beyaz</option>
-            <option value="Black">Siyah</option> 
-        </select>
-        <select #timeSelector class="time-selector">
-            <option value="Three">Hamle başı 3 dakika</option>
-            <option value="Two">Hamle başı 2 dakika</option>
-            <option value="One">Hamle başı 1.5 dakika</option>
-            <option value="One">Hamle başı 1 dakika</option>
-            <option value="One">Hamle başı 30 saniye</option>
-        </select>
+    <div class="play-user-container">
+        <img ngSrc="/assets/player-vs-player.png" alt="" height="300" width="500" priority>
+        <div class="selectors">
+            <select #timeSelector class="time-selector">
+                <option value="Three">Hamle başı 3 dakika</option>
+                <option value="Two">Hamle başı 2 dakika</option>
+                <option value="One">Hamle başı 1.5 dakika</option>
+                <option value="One">Hamle başı 1 dakika</option>
+                <option value="One">Hamle başı 30 saniye</option>
+            </select>
+        </div>
+        <button class="start-game-button" (click)="StartGameUser(timeSelector.value)">
+            Maçı Başlat
+        </button>
     </div>
-    <button class="start-game-button" (click)="StartGame(colorSelector.value, timeSelector.value)">
-        Maçı Başlat
-    </button>
+    <div class="play-robot-container">
+        <img ngSrc="/assets/ytu-chess-robot-logo-1.png" alt="" height="435" width="435" priority>
+        <div class="selectors">
+            <select #colorSelector class="color-selector">
+                <option value="Random">Rastgele</option>
+                <option value="White">Beyaz</option>
+                <option value="Black">Siyah</option> 
+            </select>
+            <select #timeSelector class="time-selector">
+                <option value="Three">Hamle başı 3 dakika</option>
+                <option value="Two">Hamle başı 2 dakika</option>
+                <option value="One">Hamle başı 1.5 dakika</option>
+                <option value="One">Hamle başı 1 dakika</option>
+                <option value="One">Hamle başı 30 saniye</option>
+            </select>
+        </div>
+        <button class="start-game-button" (click)="StartGameRobot(colorSelector.value, timeSelector.value)">
+            Maçı Başlat
+        </button>
+    </div>
 </div>

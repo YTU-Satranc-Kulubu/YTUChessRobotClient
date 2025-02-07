@@ -1,8 +1,19 @@
 .main-container {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.play-user-container, .play-robot-container{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 50%;
+}
+
+.play-user-container{
+    margin-top: 4%;
 }
 
 .selectors{
@@ -10,6 +21,10 @@
     flex-direction: row;
     justify-content: space-between;
     width: 30%;
+}
+
+.play-user-container .selectors{
+    margin-top: 10%;
 }
 
 .color-selector, .time-selector {
@@ -24,6 +39,11 @@
     margin-top: 20px;
     background-color: aquamarine;
 }
+
+.play-user-container .start-game-button {
+    margin-left: -4%;
+}
+
 
 @media (max-width: 768px) {
     .selectors{

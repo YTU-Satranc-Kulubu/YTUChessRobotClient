@@ -25,13 +25,17 @@ export class StartPageComponent implements OnInit, OnDestroy{
   checkIfMobile() {
     this.isMobile = window.innerWidth <= 768;
   }
-  StartGame(color: string, time: string) {
+  StartGameRobot(color: string, time: string) {
     if (color.match("Random")){
       const randomNumber = Math.random() < 0.5 ? 1 : 2;
       color = randomNumber == 1 ? "White" : "Black";
     }
     
     // initialize the game with service then go to /play/GameId url
-    this.router.navigateByUrl("/play/1");
+    this.router.navigateByUrl("/play-robot/1");
+  }
+  StartGameUser(time: string) {  
+    // initialize the game with service then go to /play/GameId url
+    this.router.navigateByUrl("/play-user/1");
   }
 }
