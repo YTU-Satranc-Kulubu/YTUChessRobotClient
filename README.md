@@ -20,6 +20,7 @@ YTUChessRobot'a bu link üzerinden erişebilirsiniz:
 ## Proje Kurulumu
 
 ### Gereksinimler
+- Node.js
 - Angular CLI
 
 ### Kurulum
