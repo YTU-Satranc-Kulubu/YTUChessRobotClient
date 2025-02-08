@@ -21,9 +21,9 @@
         "rule2": "Only one match can be played at a time.",
         "rule3": "Not making a move for more than 5 minutes will result in the match being canceled.",
         "request1": "Since we allow up to 250 matches at the same time, please log out when you are not active.",
-        "request2-part1": "If you have suggestions or encounter any errors/issues, please",
-        "request2-part2": "report them to us",
-        "contact-page": "from the Contact Page.",
+        "request2-part1": "If you have suggestions or encounter any errors/issues, use the",
+        "request2-part2": "to report them to us.",
+        "contact-page": "Contact Page",
         "contributers": "Contributers",
         "web": "Web Programming",
         "ai": "AI",
@@ -45,5 +45,11 @@
     "user-page": {
         "update": "Update",
         "delete": "Delete"
+    },
+    "start-page": {
+        "start-game": "Start Game",
+        "random": "Random",
+        "white": "White",
+        "black": "Black"
     }
 }

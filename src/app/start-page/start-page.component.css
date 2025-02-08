@@ -13,7 +13,13 @@
 }
 
 .play-user-container{
-    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.play-user-container img, .play-robot-container img{
+    width: 60%;
+    height: auto;
+    aspect-ratio: 1;
 }
 
 .selectors{
@@ -23,10 +29,15 @@
     width: 30%;
 }
 
+.play-robot-container .selectors .time-selector{
+    margin-left: 5px;
+}
+
 .color-selector, .time-selector {
     width: 200px;
     height: 50px;
     background-color: aquamarine;
+    text-align-last: center;
 }
 
 .start-game-button {
@@ -42,10 +53,47 @@
 
 
 @media (max-width: 768px) {
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .play-user-container, .play-robot-container{
+        width: 100%;
+        border: none;
+    }
+
+    .play-robot-container{
+        border-bottom: 2px solid white;
+    }
+
+    .play-user-container img, .play-robot-container img{
+        width: 70%;
+    }
+
     .selectors{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         width: 60%;
+    }
+
+    .color-selector, .time-selector {
+        width: 100px;
+        height: 40px;
+        background-color: aquamarine;
+        text-align-last: center;
+    }
+
+    .start-game-button {
+        margin-bottom: 30px;
+        width: 120px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: aquamarine;
+    }
+
+    .play-user-container .start-game-button {
+        margin-left: 0;
     }
 }

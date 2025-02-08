@@ -1,11 +1,12 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-start-page',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, TranslateModule],
   templateUrl: './start-page.component.html',
   styleUrl: './start-page.component.css'
 })

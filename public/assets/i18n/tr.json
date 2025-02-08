@@ -45,5 +45,11 @@
     "user-page": {
         "update": "Güncelle",
         "delete": "Sil"
+    },
+    "start-page": {
+        "start-game": "Maçı başlat",
+        "random": "Rastgele",
+        "white": "Beyaz",
+        "black": "Siyah"
     }
 }

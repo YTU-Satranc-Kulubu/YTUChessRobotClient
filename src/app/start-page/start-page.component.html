@@ -1,37 +1,35 @@
 <div class="main-container">
-    <div class="play-user-container">
-        <img ngSrc="/assets/player-vs-player.png" alt="" height="450" width="450" priority>
-        <div class="selectors">
-            <select #timeSelector class="time-selector">
-                <option value="Three">Hamle başı 3 dakika</option>
-                <option value="Two">Hamle başı 2 dakika</option>
-                <option value="One">Hamle başı 1.5 dakika</option>
-                <option value="One">Hamle başı 1 dakika</option>
-                <option value="One">Hamle başı 30 saniye</option>
-            </select>
-        </div>
-        <button class="start-game-button" (click)="StartGameUser(timeSelector.value)">
-            Maçı Başlat
-        </button>
-    </div>
     <div class="play-robot-container">
         <img ngSrc="/assets/ytu-chess-robot-logo-1.png" alt="" height="450" width="450" priority>
         <div class="selectors">
             <select #colorSelector class="color-selector">
-                <option value="Random">Rastgele</option>
-                <option value="White">Beyaz</option>
-                <option value="Black">Siyah</option> 
+                <option value="Random">{{ 'start-page.random' | translate }}</option>
+                <option value="White">{{ 'start-page.white' | translate }}</option>
+                <option value="Black">{{ 'start-page.black' | translate }}</option> 
             </select>
             <select #timeSelector class="time-selector">
-                <option value="Three">Hamle başı 3 dakika</option>
-                <option value="Two">Hamle başı 2 dakika</option>
-                <option value="One">Hamle başı 1.5 dakika</option>
-                <option value="One">Hamle başı 1 dakika</option>
-                <option value="One">Hamle başı 30 saniye</option>
+                <option value="one-plus-zero">1+0</option>
+                <option value="two-plus-one">2+1</option>
+                <option value="three-plus-zero">3+0</option>
+                <option value="three-plus-two">3+2</option>
             </select>
         </div>
         <button class="start-game-button" (click)="StartGameRobot(colorSelector.value, timeSelector.value)">
-            Maçı Başlat
+            {{ 'start-page.start-game' | translate }}
+        </button>
+    </div>
+    <div class="play-user-container">
+        <img ngSrc="/assets/player-vs-player.png" alt="" height="450" width="450" priority>
+        <div class="selectors">
+            <select #timeSelector class="time-selector">
+                <option value="one-plus-zero">1+0</option>
+                <option value="two-plus-one">2+1</option>
+                <option value="three-plus-zero">3+0</option>
+                <option value="three-plus-two">3+2</option>
+            </select>
+        </div>
+        <button class="start-game-button" (click)="StartGameUser(timeSelector.value)">
+            {{ 'start-page.start-game' | translate }}
         </button>
     </div>
 </div>
