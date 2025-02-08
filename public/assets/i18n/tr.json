@@ -12,10 +12,9 @@
         "email-code": "Kod",
         "verify": "Doğrula",
         "best-players": "En İyi Oyuncular",
-        "err-email-required": "Mail alanı boş geçilemez",
+        "err-required": "Bu alan boş geçilemez",
         "err-invalid-email": "Geçerli bir mail adresi giriniz",
         "err-invalid-pattern": "Şuanda sadece YTÜ mailleri desteklenmektedir",
-        "err-pass-required": "Şifre alanı boş geçilemez",
         "err-pass-minlength": "En az 6 karakter giriniz"
     },
     "main-page": {
@@ -45,7 +44,15 @@
         "register": "Kayıt Ol",
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
-        "pass-doesnt-match-err": "Şifreler eşleşmiyor"
+        "pass-doesnt-match-err": "Şifreler eşleşmiyor",
+        "user-name": "Kullanıcı Adı",
+        "gender": "Cinsiyet",
+        "err-pass-doesnt-match": "Şifreler eşleşmiyor",
+        "male": "Erkek",
+        "female": "Kadın",
+        "doesnt-say": "Belirtmek istemiyorum",
+        "bad-word": "Bu kullanıcı adı alınamaz",
+        "taken": "Bu kullanıcı adı alınamaz"
     },
     "user-page": {
         "update": "Güncelle",

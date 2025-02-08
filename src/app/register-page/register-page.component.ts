@@ -2,13 +2,15 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { User } from '../models/ui-models/user-model';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
+import { userNameAsyncValidator } from '../validators/user-name-validator';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [RouterLink, TranslateModule, FormsModule, NgIf],
+  imports: [RouterLink, TranslateModule, ReactiveFormsModule, NgIf],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css'
 })
@@ -25,7 +27,18 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
   };
   confirmPassword: string = '';
   isMobile: boolean = false;
-  constructor(private translate: TranslateService) {}
+  registerForm: FormGroup;
+    
+  
+  constructor(private fb: FormBuilder,  private translate: TranslateService) {
+    this.registerForm = this.fb.group({
+      userName: ['', [Validators.required], [userNameAsyncValidator]],
+      email: ['', [Validators.required, emailValidator()], [emailPatternAsyncValidator]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+      gender: ['', [Validators.required]],
+    });   
+  }
   ngOnInit(): void {
     window.addEventListener('resize', () => {
       this.checkIfMobile();
@@ -40,17 +53,9 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
     this.isMobile = window.innerWidth <= 768;
   }
   onRegister(){
-    this.errorMessage = null;
-    if(!this.newUser.name.trim() || !this.newUser.surname.trim() || !this.newUser.userName.trim() || !this.newUser.email.trim() ||
-      !this.newUser.password.trim() || !this.confirmPassword.trim()){
-        this.setErrorMessage('public.empty-field-err');
+    if (this.registerForm.valid) {
+      console.log(this.registerForm.value);
     }
-    else if(this.newUser.password != this.confirmPassword){
-      this.setErrorMessage('register-page.pass-doesnt-match-err');
-    }
-    else{
-      // add user
-    }  
   }
   setErrorMessage(errorMessage: string): void {
     this.translate.get(errorMessage).subscribe((translation: string) => {

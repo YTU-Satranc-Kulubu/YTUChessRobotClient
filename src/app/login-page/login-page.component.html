@@ -5,7 +5,7 @@
       <label for="email">{{ 'public.email' | translate }}:</label>
       <input type="email" id="email" formControlName="email" placeholder="*@std.yildiz.edu.tr  |  *@.yildiz.edu.tr" />
       <div class="error-message" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
-        <span *ngIf="loginForm.get('email')?.errors?.['required']">{{ 'public.err-email-required' | translate }}</span>
+        <span *ngIf="loginForm.get('email')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
         <span *ngIf="loginForm.get('email')?.errors?.['invalidEmail']">{{ 'public.err-invalid-email' | translate }}</span>
         <span *ngIf="loginForm.get('email')?.errors?.['invalidPattern']">{{ 'public.err-invalid-pattern' | translate }}</span>
       </div>
@@ -13,7 +13,7 @@
       <label for="password">{{ 'public.password' | translate }}:</label>
       <input type="password" id="password" formControlName="password"/>
       <div class="error-message" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
-        <span *ngIf="loginForm.get('password')?.errors?.['required']">{{ 'public.err-pass-required' | translate }}</span>
+        <span *ngIf="loginForm.get('password')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
         <span *ngIf="loginForm.get('password')?.errors?.['minlength']">{{ 'public.err-pass-minlength' | translate }}</span>
       </div>
     

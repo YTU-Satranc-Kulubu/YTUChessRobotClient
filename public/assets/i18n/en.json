@@ -12,10 +12,9 @@
         "email-code": "Code",
         "verify": "Verify",
         "best-players": "Best Players",
-        "err-email-required": "Email can not be empty",
+        "err-required": "This field can not be empty",
         "err-invalid-email": "Please enter a valid email",
         "err-invalid-pattern": "We only support YTU emails at this time",
-        "err-pass-required": "Password can not be empty",
         "err-pass-minlength": "Minimum length is 6"
     },
     "main-page": {
@@ -39,13 +38,21 @@
     },
     "login-page": {
         "forgot": "Forgot my password",
-        "no-account": "Don't have an account"
+        "no-account": "Don't have an account? "
     },
     "register-page": {
         "register": "Register",
         "confirm-password": "Password Again",
         "already-account": "Already have an account?",
-        "pass-doesnt-match-err": "Passwords doesn't match"
+        "pass-doesnt-match-err": "Passwords doesn't match",
+        "user-name": "User Name",
+        "gender": "Gender",
+        "err-pass-doesnt-match": "Passwords doesn't match",
+        "male": "Man",
+        "female": "Woman",
+        "doesnt-say": "Don't want to share",
+        "bad-word": "This user name cannot be taken.",
+        "taken": "This user name cannot be taken."
     },
     "user-page": {
         "update": "Update",

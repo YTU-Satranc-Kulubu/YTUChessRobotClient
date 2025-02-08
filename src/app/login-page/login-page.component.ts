@@ -3,7 +3,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { EmailValidatorService } from '../services/email-validator.service';
+import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
 
 @Component({
   selector: 'app-login-page',
@@ -15,14 +15,12 @@ import { EmailValidatorService } from '../services/email-validator.service';
 export class LoginPageComponent {
   email: string = "";
   password: string = "";
-  errorMessage: string | null = null;
   isMobile: boolean = false;
   loginForm: FormGroup;
-  
 
-  constructor(private fb: FormBuilder, private translate: TranslateService, private emailValidatorService: EmailValidatorService) {
+  constructor(private fb: FormBuilder, private translate: TranslateService) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email, this.emailValidatorService.isEmailValid.bind(this.emailValidatorService)]],
+      email: ['', [Validators.required, emailValidator()], [emailPatternAsyncValidator]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });   
   }
@@ -41,15 +39,8 @@ export class LoginPageComponent {
     this.isMobile = window.innerWidth <= 768;
   }
   onLogin(){
-    this.errorMessage = null;
-    if(!this.email.trim() && !this.password.trim()){
-      this.setErrorMessage('public.empty-field-err');
+    if (this.loginForm.valid) {
+      console.log(this.loginForm.value);
     }
-  }
-
-  setErrorMessage(errorMessage: string): void {
-    this.translate.get(errorMessage).subscribe((translation: string) => {
-      this.errorMessage = translation;
-    });
   }
 }

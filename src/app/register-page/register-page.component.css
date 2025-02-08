@@ -21,21 +21,16 @@ h1 {
   color: #ffffff;
 }
   
-.form-group {
-  margin-bottom: 15px;
-}
-  
 label {
   display: block;
+  margin-top: 10px;
   margin-bottom: 5px;
   font-size: 14px;
   color: #cccccc;
 }
   
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
+input, select{
+  width: 92%;
   padding: 10px;
   border: 1px solid #444444;
   border-radius: 4px;
@@ -43,10 +38,12 @@ input[type="password"] {
   color: #ffffff;
   font-size: 14px;
 }
+
+select{
+  width: 97%;
+}
   
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+input:focus, select:focus {
   outline: none;
   border-color: #6a5acd;
 }
@@ -97,9 +94,18 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .main-container{
+    width: 90%;
+    margin-left: 5%;
+  }
+
   .register-container{
     margin: 0;
     margin-top: 10%;
     width: 100%;
+  }
+
+  select{
+    width: 99%;
   }
 }
