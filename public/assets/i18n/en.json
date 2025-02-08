@@ -11,7 +11,12 @@
         "gender": "Gender",
         "email-code": "Code",
         "verify": "Verify",
-        "best-players": "Best Players"
+        "best-players": "Best Players",
+        "err-email-required": "Email can not be empty",
+        "err-invalid-email": "Please enter a valid email",
+        "err-invalid-pattern": "We only support YTU emails at this time",
+        "err-pass-required": "Password can not be empty",
+        "err-pass-minlength": "Minimum length is 6"
     },
     "main-page": {
         "message": "YTU Chess Robot",

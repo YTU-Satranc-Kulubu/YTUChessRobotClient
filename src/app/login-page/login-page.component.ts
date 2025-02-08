@@ -1,12 +1,14 @@
 import { Component, NgModule } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { EmailValidatorService } from '../services/email-validator.service';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [TranslateModule, FormsModule, RouterLink],
+  imports: [TranslateModule, ReactiveFormsModule, RouterLink, NgIf],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
@@ -15,7 +17,15 @@ export class LoginPageComponent {
   password: string = "";
   errorMessage: string | null = null;
   isMobile: boolean = false;
-  constructor(private translate: TranslateService) {}
+  loginForm: FormGroup;
+  
+
+  constructor(private fb: FormBuilder, private translate: TranslateService, private emailValidatorService: EmailValidatorService) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email, this.emailValidatorService.isEmailValid.bind(this.emailValidatorService)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });   
+  }
 
   ngOnInit(): void {
     window.addEventListener('resize', () => {
