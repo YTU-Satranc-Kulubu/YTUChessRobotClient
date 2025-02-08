@@ -26,11 +26,11 @@
             </div>
 
             <label for="confirmPassword">{{ 'register-page.confirm-password' | translate }}:</label>
-            <input type="confirmPassword" id="confirmPassword" formControlName="confirmPassword"/>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword"/>
             <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
                 <span *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
                 <span *ngIf="registerForm.get('confirmPassword')?.errors?.['minlength']">{{ 'public.err-pass-minlength' | translate }}</span>
-                <span *ngIf="registerForm.get('confirmPassword')?.errors?.['doesntMacth']">{{ 'register-page.err-pass-doesnt-match' | translate }}</span>
+                <span *ngIf="registerForm.get('confirmPassword')?.errors?.['passDoNotMatch']">{{ 'register-page.err-pass-do-not-match' | translate }}</span>
             </div>
 
             <label for="gender">{{ 'register-page.gender' | translate }}:</label>
