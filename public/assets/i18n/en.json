@@ -62,5 +62,13 @@
         "random": "Random",
         "white": "White",
         "black": "Black"
+    },
+    "contact-us-page": {
+        "contact-form": "Contact Form",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "direct-contact": "To submit feedback/complaints with data such as photos",
+        "err-mess-lenght": "Minimum lenght is 10"
     }
 }

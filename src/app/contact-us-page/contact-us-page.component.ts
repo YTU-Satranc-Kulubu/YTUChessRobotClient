@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
+import { NgIf } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-us-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf, TranslateModule],
   templateUrl: './contact-us-page.component.html',
   styleUrl: './contact-us-page.component.css'
 })
@@ -15,7 +18,7 @@ export class ContactUsPageComponent {
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       subject: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, emailValidator()], [emailPatternAsyncValidator]],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }

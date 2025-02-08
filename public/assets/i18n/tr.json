@@ -3,7 +3,7 @@
         "login": "Giriş Yap",
         "sign-up": "Kayıt Ol",
         "empty-field-err": "Alanlar boş bırakılamaz",
-        "email": "Mail",
+        "email": "E-posta",
         "password": "Şifre",
         "name": "Ad",
         "surname": "Soyad",
@@ -62,5 +62,13 @@
         "random": "Rastgele",
         "white": "Beyaz",
         "black": "Siyah"
+    },
+    "contact-us-page": {
+        "contact-form": "İletişim Formu",
+        "subject": "Konu",
+        "message": "Mesaj",
+        "send": "Gönder",
+        "direct-contact": "Fotoğraf gibi veriler ile geri dönüş/şikayet iletmek için",
+        "err-mess-lenght": "10 karakterden daha kısa olamaz"
     }
 }

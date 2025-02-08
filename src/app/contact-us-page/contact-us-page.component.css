@@ -6,6 +6,15 @@
   margin-top: 3%;
 }
 
+.contact-container{
+  background-color: #2e2e2e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 30%;
+}
+
 h2{
   color: white;
   text-align: center;
@@ -13,7 +22,7 @@ h2{
 }
   
 form{
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -58,4 +67,23 @@ button {
   
 button:hover {
   background-color: #e67e22;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+p{
+  color: white;
+}
+
+a {
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

@@ -30,7 +30,7 @@ label {
 }
   
 input, select{
-  width: 92%;
+  width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #444444;
   border-radius: 4px;
@@ -40,7 +40,7 @@ input, select{
 }
 
 select{
-  width: 97%;
+  width: 100%;
 }
   
 input:focus, select:focus {
