@@ -13,13 +13,19 @@
     width: 70%;
 }
 
+.images img{
+    width: 40%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
 .rules-requests-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5%;
     width: 80%;
-    height: 300px;
+    height: fit-content;
 }
 
 .rules, .requests{
@@ -28,7 +34,6 @@
     align-items: center;
     flex-wrap: wrap;
     width: 40%;
-    height: 85%;
     padding: 2%;
     border-style: solid;
     border-color: white;
@@ -61,6 +66,10 @@
     border-color: white;
     margin-top: 5%;
     width: 80%;
+}
+
+a {
+    color: #db1cf2;
 }
 
 .people{
@@ -106,8 +115,7 @@
         width: 100%;
     }
     .images img{
-        width: 200px;
-        height: 200px;
+        width: 50%;
     }
     .rules-requests-container{
         display: flex;
@@ -156,5 +164,14 @@
         padding-left: 15px;
         padding-bottom: 10px;
         font-size: x-small;
+    }
+
+    .two-button button{
+        border-radius: 10%;
+        width: 100px;
+        height: 40px;
+        margin-left: 10px;
+        margin-top: 10px;
+        cursor: pointer;
     }
 }
