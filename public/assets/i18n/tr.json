@@ -51,7 +51,13 @@
         "female": "Kadın",
         "doesnt-say": "Belirtmek istemiyorum",
         "bad-word": "Bu kullanıcı adı alınamaz",
-        "taken": "Bu kullanıcı adı alınamaz"
+        "taken": "Bu kullanıcı adı alınamaz",
+        "accept-terms": "Kullanıcı sözleşmesini okudum, anladım ve kabul ediyorum.",
+        "accept-fairplay": "Hile yapmayıp kurallara uymayı kabul ediyorum.",
+        "user-agreement": "Kullanıcı Sözleşmesi",
+        "fair-play-agreement": "Sportmenlik Anlaşması",
+        "read": "Okudum",
+        "err-not-checked": "Kayıt olmak için kabul ediniz"
     },
     "user-page": {
         "update": "Güncelle",

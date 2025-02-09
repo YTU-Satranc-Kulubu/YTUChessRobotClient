@@ -51,7 +51,13 @@
         "female": "Woman",
         "doesnt-say": "Don't want to share",
         "bad-word": "This user name cannot be taken.",
-        "taken": "This user name cannot be taken."
+        "taken": "This user name cannot be taken.",
+        "accept-terms": "I read, understood and accept user agreement terms.",
+        "accept-fairplay": "I accept fair play terms.",
+        "user-agreement": "User Agreement",
+        "fair-play-agreement": "Fair Play Agreement",
+        "read": "I read",
+        "err-not-checked": "Accept to register"
     },
     "user-page": {
         "update": "Update",
