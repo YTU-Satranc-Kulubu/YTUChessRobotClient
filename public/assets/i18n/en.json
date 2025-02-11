@@ -15,7 +15,10 @@
         "err-required": "This field can not be empty",
         "err-invalid-email": "Please enter a valid email",
         "err-invalid-pattern": "We only support YTU emails at this time",
-        "err-pass-minlength": "Minimum length is 6"
+        "err-pass-minlength": "Minimum length is 6",
+        "male": "Man",
+        "female": "Woman",
+        "doesnt-say": "Don't want to share"
     },
     "main-page": {
         "message": "YTU Chess Robot",
@@ -45,11 +48,7 @@
         "confirm-password": "Password Again",
         "already-account": "Already have an account?",
         "user-name": "User Name",
-        "gender": "Gender",
         "err-pass-do-not-match": "Passwords doesn't match",
-        "male": "Man",
-        "female": "Woman",
-        "doesnt-say": "Don't want to share",
         "bad-word": "This user name cannot be taken.",
         "taken": "This user name cannot be taken.",
         "accept-terms": "I read, understood and accept user agreement terms.",
@@ -61,7 +60,8 @@
     },
     "user-page": {
         "update": "Update",
-        "delete": "Delete"
+        "delete": "Delete",
+        "new-password": "New Password"
     },
     "start-page": {
         "start-game": "Start Game",

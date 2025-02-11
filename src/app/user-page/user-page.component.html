@@ -1,47 +1,53 @@
 <div class="main-container">
-    <div class="user-informations">
-        <form>
-            <div class="two-field-container">
-                <div class="field">
-                    <label for="name">{{ 'public.name' | translate }}</label>
-                    <input id="name" type="text" [(ngModel)]="user.name" name="name" required>
+    <div class="user-container">
+        <div class="user-informations">
+            <form [formGroup]="updateForm">
+                <div class="two-field-container">
+                    <div class="field">
+                        <label for="userName">{{ 'public.user-name' | translate }}:</label>
+                        <input type="text" id="userName" formControlName="userName" readonly/>
+                    </div>
+                    <div class="field">
+                        <label for="email">{{ 'public.email' | translate }}:</label>
+                        <input type="email" id="email" formControlName="email" readonly/>
+                    </div>
                 </div>
-                <div class="field">
-                    <label for="surname">{{ 'public.surname' | translate }}</label>
-                    <input id="surname" type="text" [(ngModel)]="user.surname" name="surname" required>
+                <div class="two-field-container">
+                    <div class="field">
+                        <label for="gender">{{ 'public.gender' | translate }}:</label>
+                        <select id="gender" formControlName="gender" class="gender-selector">
+                            <option value="male">{{ 'public.male' | translate }}</option>
+                            <option value="female">{{ 'public.female' | translate }}</option>
+                            <option value="doesnt-say">{{ 'public.doesnt-say' | translate }}</option>
+                        </select>
+                        <div class="error-message" *ngIf="updateForm.get('gender')?.touched && updateForm.get('gender')?.invalid">
+                            <span *ngIf="updateForm.get('gender')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="password">{{ 'user-page.new-password' | translate }}:</label>
+                        <input type="password" id="password" formControlName="password"/>
+                        <div class="error-message" *ngIf="updateForm.get('password')?.touched && updateForm.get('password')?.invalid">
+                            <span *ngIf="updateForm.get('password')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+                            <span *ngIf="updateForm.get('password')?.errors?.['minlength']">{{ 'public.err-pass-minlength' | translate }}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="two-field-container">
-                <div class="field">
-                    <label for="userName">{{ 'public.user-name' | translate }}</label>
-                    <input id="userName" type="text" [(ngModel)]="user.name" name="userName" required>
+                <div class="two-field-container">
+                    <div class="field">
+                        <button type="submit" (click)="onUpdate()">{{ 'user-page.update' | translate }}</button>
+                    </div>
+                    <div class="field">
+                        <button type="submit" (click)="onDelete()">{{ 'user-page.delete' | translate }}</button>
+                    </div>
                 </div>
-                <div class="field">
-                    <label for="gender">{{ 'public.gender' | translate }}</label>
-                    <input id="gender" type="text" [(ngModel)]="gender" name="gender" required>
-                </div>
-            </div>
-            <div class="two-field-container">
-                <div class="field">
-                    <label for="email">{{ 'public.email' | translate }}</label>
-                    <input id="email" type="email" [(ngModel)]="user.email" name="email" required>
-                </div>
-                <div class="field">
-                    <label for="password">{{ 'public.password' | translate }}</label>
-                    <input id="password" type="password" [(ngModel)]="user.password" name="password" required>
-                </div>
-            </div>
-            <div class="two-field-container">
-                <div class="field">
-                    <button type="submit" (click)="onUpdate()">{{ 'user-page.update' | translate }}</button>
-                </div>
-                <div class="field">
-                    <button type="submit" (click)="onDelete()">{{ 'user-page.delete' | translate }}</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+        <div class="statistics">
+    
+        </div>
     </div>
-    <div class="statistics">
+    <div class="games-container">
 
     </div>
 </div>

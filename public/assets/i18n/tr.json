@@ -15,7 +15,10 @@
         "err-required": "Bu alan boş geçilemez",
         "err-invalid-email": "Geçerli bir mail adresi giriniz",
         "err-invalid-pattern": "Şuanda sadece YTÜ mailleri desteklenmektedir",
-        "err-pass-minlength": "En az 6 karakter giriniz"
+        "err-pass-minlength": "En az 6 karakter giriniz",
+        "male": "Erkek",
+        "female": "Kadın",
+        "doesnt-say": "Belirtmek istemiyorum"
     },
     "main-page": {
         "message": "YTÜ Satranç Robotu",
@@ -45,11 +48,8 @@
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
         "user-name": "Kullanıcı Adı",
-        "gender": "Cinsiyet",
+
         "err-pass-do-not-match": "Şifreler eşleşmiyor",
-        "male": "Erkek",
-        "female": "Kadın",
-        "doesnt-say": "Belirtmek istemiyorum",
         "bad-word": "Bu kullanıcı adı alınamaz",
         "taken": "Bu kullanıcı adı alınamaz",
         "accept-terms": "Kullanıcı sözleşmesini okudum, anladım ve kabul ediyorum.",
@@ -61,7 +61,8 @@
     },
     "user-page": {
         "update": "Güncelle",
-        "delete": "Sil"
+        "delete": "Sil",
+        "new-password": "Yeni Şifre"
     },
     "start-page": {
         "start-game": "Maçı başlat",

@@ -33,11 +33,11 @@
                 <span *ngIf="registerForm.get('confirmPassword')?.errors?.['passDoNotMatch']">{{ 'register-page.err-pass-do-not-match' | translate }}</span>
             </div>
 
-            <label for="gender">{{ 'register-page.gender' | translate }}:</label>
+            <label for="gender">{{ 'public.gender' | translate }}:</label>
             <select id="gender" formControlName="gender" class="gender-selector">
-                <option value="male">{{ 'register-page.male' | translate }}</option>
-                <option value="female">{{ 'register-page.female' | translate }}</option>
-                <option value="doesnt-say">{{ 'register-page.doesnt-say' | translate }}</option>
+                <option value="male">{{ 'public.male' | translate }}</option>
+                <option value="female">{{ 'public.female' | translate }}</option>
+                <option value="doesnt-say">{{ 'public.doesnt-say' | translate }}</option>
             </select>
             <div class="error-message" *ngIf="registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid">
                 <span *ngIf="registerForm.get('gender')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
