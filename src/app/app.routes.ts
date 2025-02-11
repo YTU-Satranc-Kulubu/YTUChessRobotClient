@@ -11,6 +11,7 @@ import { UniversityPlayersPageComponent } from './university-players-page/univer
 import { PlayUserPageComponent } from './play-user-page/play-user-page.component';
 import { PlayRobotPageComponent } from './play-robot-page/play-robot-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
@@ -24,5 +25,6 @@ export const routes: Routes = [
     {path: 'user-page/:UserId', component: UserPageComponent},
     {path: 'best/:type', component: BestPageComponent},
     {path: 'university/:UniversityId', component: UniversityPlayersPageComponent},
-    {path: 'contact-us', component: ContactUsPageComponent}
+    {path: 'contact-us', component: ContactUsPageComponent},
+    {path: 'about', component: AboutPageComponent}
 ];

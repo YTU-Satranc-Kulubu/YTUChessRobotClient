@@ -81,5 +81,19 @@
         "about": "About Us",
         "sss": "FAQ",
         "contact": "Contact"
+    },
+    "about": {
+        "contributers": "Contributers",
+        "web": "Web Programming",
+        "ai": "AI",
+        "algorithm": "Board Algorithm",
+        "clubs": "Chess Clubs That Are Using Our Service",
+        "access": "Who Can Access",
+        "mess1": "The YTU Chess Robot project has been carried out under the YTU Chess Club with four teams: Artificial Intelligence, Algorithm, Web Development, and Learning.",
+        "mess2": "Due to server costs, we are currently only serving YTU students and faculty members, but we are planning to open our site to everyone, starting with universities.",
+        "mess3": "Chess clubs that wish to grant access to their players can contact us through the contact page.",
+        "mess3-1": "Chess clubs that wish to grant access to their players can contact us through the",
+        "mess3-2": "contact page",
+        "mess3-3": "."
     }
 }

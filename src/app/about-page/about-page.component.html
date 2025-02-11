@@ -1,0 +1,51 @@
+<div class="main-container">
+    <div class="about-container">
+        <div class="title">
+            <h3>YTÜ Satranç Robotu Hakkında</h3>
+        </div>
+        <p>
+            * {{ 'about.mess1' | translate }}
+        </p>
+        <p>
+            * {{ 'about.mess2' | translate }}
+        </p>
+        <p>
+            * {{ 'about.mess3-1' | translate }} <a href="/contact-us">{{ 'about.mess3-2' | translate }}</a>{{ 'about.mess3-3' | translate }}
+        </p>
+    </div>
+    <div class="who-can-access-container" *ngIf="accessList.length > 0">
+        <div class="title">
+            <h3>{{ 'about.access' | translate }}</h3>
+        </div>
+        <ul>
+            <li *ngFor="let access of accessList">{{ access }}</li>
+        </ul>
+    </div>
+    <div class="chess-clubs-container" *ngIf="chessClubList.length > 0">
+        <div class="title">
+            <h3>{{ 'about.clubs' | translate }}</h3>
+        </div>
+        <ul>
+            <li *ngFor="let chessClub of chessClubList">{{ chessClub }}</li>
+        </ul>
+    </div>
+    <div class="contributers-container">
+        <div class="title">
+            <h3>{{ 'about.contributers' | translate }}</h3>
+        </div>
+        <div class="people">
+            <div class="name-surname">
+                <p>Ahmet Mahir Demirelli</p>
+                <p>Ömer Faruk Aslan</p>
+            </div>
+            <div class="roles">
+                <p>{{ 'about.web' | translate }} / {{ 'about.algorithm' | translate }}</p>
+                <p>{{ 'about.web' | translate }} / {{ 'about.ai' | translate }}</p>
+            </div>
+            <div class="link">
+                <p><a href="https://linktr.ee/ahmet.mahir.demirelli" target="_blank">LinkTree</a></p>
+                <p><a href="https://www.linkedin.com/in/ömer-faruk-aslan-9392371b6/" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </div>
+</div>

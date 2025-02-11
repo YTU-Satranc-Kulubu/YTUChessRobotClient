@@ -82,5 +82,18 @@
         "about": "Hakkımızda",
         "sss": "SSS",
         "contact": "İletişim"
+    },
+    "about": {
+        "contributers": "Katkıda Bulunanlar",
+        "web": "Web Geliştirme",
+        "ai": "Yapay Zeka",
+        "algorithm": "Tahta Algoritması Geliştirme",
+        "clubs": "Bu Hizmeti Kullanan Satranç Kulüpleri",
+        "access": "Kimler Erişebilir",
+        "mess1": "YTÜ Satranç Robotu projesi YTÜ Satanç Kulübü altında Yapay Zeka, Algoritma, Web Geliştirme ve Öğrenme olarak 4 ekip ile gerçekleştirilmiştir.",
+        "mess2": "Server ücretlerinden dolayı şuanda sadece YTÜ öğrenci ve akademisyenlerine hizmet vermekteyiz fakat sitemizi öncelikle üniversiteler olmak üzere herkese açmayı düşünüyoruz.",
+        "mess3-1": "Sporcularına erişim açmak isteyen satranç kulüpleri bize",
+        "mess3-2": "iletişim sayfası",
+        "mess3-3": " üzerinen ulaşabilir."
     }
 }
