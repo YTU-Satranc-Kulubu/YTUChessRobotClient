@@ -22,7 +22,7 @@ export const routes: Routes = [
     {path: 'login', component: LoginPageComponent},
     {path: 'sign-up', component: RegisterPageComponent},
     {path: 'secret-login', component: AdminLoginPageComponent},
-    {path: "secret-statistics", component: AdminPageComponent},
+    {path: "secret-admin", component: AdminPageComponent},
     {path: 'user-page/:UserId', component: UserPageComponent},
     {path: 'best/:type', component: BestPageComponent},
     {path: 'university/:UniversityId', component: UniversityPlayersPageComponent},
