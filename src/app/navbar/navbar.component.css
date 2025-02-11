@@ -4,6 +4,7 @@
     justify-content: center;
     width: 100%;
     height: 100px;
+    background-color: #7a00ff;
 }
 
 .logo{
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #f1f1f1;
     font-size: xx-large;
     width: 60%;
     margin-left: 12%;
@@ -31,7 +32,7 @@
     width: 70px;
     height: 25px;
     margin: 0px 10px;
-    background-color: rgb(132 220 249);
+    background-color: #f1f1f1;
     cursor: pointer;
 }
 
@@ -41,18 +42,7 @@
     margin: 0px 5px;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.sign-up-button{
-    background-color: rgb(132 220 249);
-}
-
-.login-button{
-    background-color: rgb(132 220 249);
-}
-
-.menu-button{
-    background-color: rgb(132 220 249);
+    background-color: #f1f1f1;
 }
 
 .side-menu {
