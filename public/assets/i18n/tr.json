@@ -77,5 +77,10 @@
         "send": "Gönder",
         "direct-contact": "Fotoğraf gibi veriler ile geri dönüş/şikayet iletmek için",
         "err-mess-lenght": "10 karakterden daha kısa olamaz"
+    },
+    "footer": {
+        "about": "Hakkımızda",
+        "sss": "SSS",
+        "contact": "İletişim"
     }
 }

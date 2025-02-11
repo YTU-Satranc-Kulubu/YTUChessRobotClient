@@ -76,5 +76,10 @@
         "send": "Send",
         "direct-contact": "To submit feedback/complaints with data such as photos",
         "err-mess-lenght": "Minimum lenght is 10"
+    },
+    "footer": {
+        "about": "About Us",
+        "sss": "FAQ",
+        "contact": "Contact"
     }
 }
