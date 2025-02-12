@@ -3,8 +3,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
-import { LoginRequest } from '../models/ui-models/login-request-model';
+import { emailValidator, emailPatternAsyncValidator } from '../../validators/email-validator';
+import { LoginRequest } from '../../models/ui-models/login-request-model';
 
 @Component({
   selector: 'app-login-page',

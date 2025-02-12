@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
+import { emailValidator, emailPatternAsyncValidator } from '../../validators/email-validator';
 import { NgIf } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 

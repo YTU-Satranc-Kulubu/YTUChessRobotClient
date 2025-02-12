@@ -1,18 +1,18 @@
 import { Routes } from '@angular/router';
-import { MainPageComponent } from './main-page/main-page.component';
-import { StartPageComponent } from './start-page/start-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { BestPageComponent } from './best-page/best-page.component';
-import { UniversityPlayersPageComponent } from './university-players-page/university-players-page.component';
-import { PlayUserPageComponent } from './play-user-page/play-user-page.component';
-import { PlayRobotPageComponent } from './play-robot-page/play-robot-page.component';
-import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { FaqPageComponent } from './faq-page/faq-page.component';
+import { MainPageComponent } from './user-pages/main-page/main-page.component';
+import { StartPageComponent } from './user-pages/start-page/start-page.component';
+import { LoginPageComponent } from './user-pages/login-page/login-page.component';
+import { RegisterPageComponent } from './user-pages/register-page/register-page.component';
+import { AdminLoginPageComponent } from './admin-pages/admin-login-page/admin-login-page.component';
+import { UserPageComponent } from './user-pages/user-page/user-page.component';
+import { AdminPageComponent } from './admin-pages/admin-page/admin-page.component';
+import { BestPageComponent } from './user-pages/best-page/best-page.component';
+import { UniversityPlayersPageComponent } from './user-pages/university-players-page/university-players-page.component';
+import { PlayUserPageComponent } from './user-pages/play-user-page/play-user-page.component';
+import { PlayRobotPageComponent } from './user-pages/play-robot-page/play-robot-page.component';
+import { ContactUsPageComponent } from './user-pages/contact-us-page/contact-us-page.component';
+import { AboutPageComponent } from './user-pages/about-page/about-page.component';
+import { FaqPageComponent } from './user-pages/faq-page/faq-page.component';
 
 export const routes: Routes = [
     {path: '', component: MainPageComponent},

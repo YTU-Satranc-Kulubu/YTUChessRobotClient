@@ -1,11 +1,11 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Game } from '../models/ui-models/game-model';
-import { Move } from '../models/common-models/move-model';
-import { Square } from '../models/common-models/square-model';
+import { Game } from '../../models/ui-models/game-model';
+import { Move } from '../../models/common-models/move-model';
+import { Square } from '../../models/common-models/square-model';
 import { ActivatedRoute } from '@angular/router';
-import { PossibleMovesService } from '../services/move-services/possible-moves.service';
-import { AfterMoveService } from '../services/move-services/after-move.service';
+import { PossibleMovesService } from '../../services/move-services/possible-moves.service';
+import { AfterMoveService } from '../../services/move-services/after-move.service';
 
 @Component({
   selector: 'app-play-robot-page',

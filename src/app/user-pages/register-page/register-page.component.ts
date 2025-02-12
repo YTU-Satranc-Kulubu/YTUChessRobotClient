@@ -3,11 +3,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
-import { userNameAsyncValidator } from '../validators/user-name-validator';
-import { passwordMatchValidator } from '../validators/password-match-validator';
-import { User } from '../models/ui-models/user-model';
-import { RegisterRequest } from '../models/ui-models/register-request-model';
+import { emailValidator, emailPatternAsyncValidator } from '../../validators/email-validator';
+import { userNameAsyncValidator } from '../../validators/user-name-validator';
+import { passwordMatchValidator } from '../../validators/password-match-validator';
+import { User } from '../../models/ui-models/user-model';
+import { RegisterRequest } from '../../models/ui-models/register-request-model';
 
 @Component({
   selector: 'app-register-page',
