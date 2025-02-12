@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
+import { LoginRequest } from '../models/ui-models/login-request-model';
 
 @Component({
   selector: 'app-login-page',
@@ -44,6 +45,10 @@ export class LoginPageComponent {
   onLogin(){
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
+      const loginRequest: LoginRequest = {
+        email: this.loginForm.get('email')?.value,
+        password: this.loginForm.get('password')?.value
+      }
     }
   }
 }
