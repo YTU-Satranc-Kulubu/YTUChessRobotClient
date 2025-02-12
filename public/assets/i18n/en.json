@@ -21,7 +21,7 @@
         "doesnt-say": "Don't want to share"
     },
     "main-page": {
-        "message": "YTU Chess Robot",
+        "title": "YTU Chess Robot",
         "rules": "Rules",
         "asks": "What We Ask",
         "rule1": "To play a match, you must log in; if you don't have an account, you need to register.",

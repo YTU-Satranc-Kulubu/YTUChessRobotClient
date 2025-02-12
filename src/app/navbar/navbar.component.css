@@ -77,6 +77,11 @@
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .title{
         display: flex;

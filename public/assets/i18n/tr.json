@@ -21,7 +21,7 @@
         "doesnt-say": "Belirtmek istemiyorum"
     },
     "main-page": {
-        "message": "YTÜ Satranç Robotu",
+        "title": "YTÜ Satranç Robotu",
         "rules": "Kurallar",
         "asks": "Ricalarımız",
         "rule1": "Maç yapmak için giriş yapılmalı, hesap yoksa kayıt yapılmalıdır",

@@ -15,21 +15,26 @@ export class NavbarComponent implements OnInit, OnDestroy {
   currentLanguage: string = '';
   isMobile: boolean = false;
   menuOpen: boolean = false;
+  
   constructor(private languageService: LanguageService) {}
+
   ngOnInit(): void {
     this.currentLanguage = this.languageService.getSavedLang() || 'tr';
     window.addEventListener('resize', () => {
       this.checkIfMobile();
     });
   }
+
   ngOnDestroy() {
     window.removeEventListener('resize', () => {
       this.checkIfMobile();
     });
   }
+
   checkIfMobile() {
     this.isMobile = window.innerWidth <= 768;
   }
+
   changeLanguage(event: Event): void {
     const target = event.target as HTMLSelectElement;
     if (target && target.value) {
