@@ -94,5 +94,10 @@
         "mess3-1": "Sporcularına erişim açmak isteyen satranç kulüpleri bize",
         "mess3-2": "iletişim sayfası",
         "mess3-3": " üzerinen ulaşabilir."
+    },
+    "send-mail-page": {
+        "receiver": "Kime gönderilsin",
+        "everyone": "Herkese",
+        "message": "İçerik"
     }
 }

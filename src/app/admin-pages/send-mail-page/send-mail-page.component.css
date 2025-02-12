@@ -1,0 +1,49 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+}
+
+.form-container{
+    background-color: #2e2e2e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 30%;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cccccc;
+}
+  
+select, textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: #3b3b3b;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6a5acd;
+}
+  
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-bottom: 10px;
+}

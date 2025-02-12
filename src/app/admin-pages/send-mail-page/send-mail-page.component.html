@@ -1,3 +1,20 @@
 <div class="main-container">
-
+    <div class="form-container">
+        <form [formGroup]="mailForm" (ngSubmit)="onSubmit()">
+            <label for="receiver">{{ 'send-mail-page.receiver' | translate }}:</label>
+            <select id="receiver" formControlName="receiver" class="receiver-selector">
+                <option value="all">{{ 'send-mail-page.everyone' | translate }}</option>
+                <option *ngFor="let userName of userNames" [value]="userName">{{ userName }}</option>
+            </select>
+            <div class="error-message" *ngIf="mailForm.get('receiver')?.touched && mailForm.get('receiver')?.invalid">
+                <span *ngIf="mailForm.get('receiver')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+            </div>
+    
+            <label for="message">{{ 'send-mail-page.message' | translate }}:</label>
+            <textarea rows="10" name="message" id="message" formControlName="message"></textarea>
+            <div class="error-message" *ngIf="mailForm.get('message')?.touched && mailForm.get('message')?.invalid">
+                <span *ngIf="mailForm.get('message')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+            </div>
+        </form>
+    </div>
 </div>

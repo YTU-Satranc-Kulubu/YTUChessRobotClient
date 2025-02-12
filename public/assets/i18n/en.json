@@ -95,5 +95,10 @@
         "mess3-1": "Chess clubs that wish to grant access to their players can contact us through the",
         "mess3-2": "contact page",
         "mess3-3": "."
+    },
+    "send-mail-page": {
+        "receiver": "Who to send",
+        "everyone": "Everyone",
+        "message": "Content"
     }
 }
