@@ -6,6 +6,8 @@ import { NgIf } from '@angular/common';
 import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
 import { userNameAsyncValidator } from '../validators/user-name-validator';
 import { passwordMatchValidator } from '../validators/password-match-validator';
+import { User } from '../models/ui-models/user-model';
+import { RegisterRequest } from '../models/ui-models/register-request-model';
 
 @Component({
   selector: 'app-register-page',
@@ -71,6 +73,12 @@ export class RegisterPageComponent implements OnInit, OnDestroy, AfterViewInit {
 
     if (this.registerForm.valid) {
       console.log(this.registerForm.value);
+      const registerRequest: RegisterRequest = {
+        userName: this.registerForm.get('userName')?.value,
+        email: this.registerForm.get('email')?.value,
+        gender: this.registerForm.get('gender')?.value,
+        password: this.registerForm.get('password')?.value
+      };
     }
     else{
       isFairPlayDisabled && this.registerForm.get('fairPlay')?.disable();

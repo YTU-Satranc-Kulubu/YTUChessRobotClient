@@ -1,9 +1,6 @@
 export interface User {
-  id: number;
-  name: string;
-  surname: string;
+  id: string,
   userName: string,
   email: string,
-  password: string,
-  isDeleted: boolean
+  gender: string
 }
