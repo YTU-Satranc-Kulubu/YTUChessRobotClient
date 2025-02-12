@@ -48,7 +48,6 @@
         "confirm-password": "Şifre Tekrarı",
         "already-account": "Zaten hesabınız mı var?",
         "user-name": "Kullanıcı Adı",
-
         "err-pass-do-not-match": "Şifreler eşleşmiyor",
         "bad-word": "Bu kullanıcı adı alınamaz",
         "taken": "Bu kullanıcı adı alınamaz",
