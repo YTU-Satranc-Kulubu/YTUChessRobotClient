@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { User } from '../models/ui-models/user-model';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -14,16 +14,7 @@ import { NgIf } from '@angular/common';
 export class UserPageComponent {
   isMobile: boolean = false;
   updateForm: FormGroup; 
-  user: User = {
-    id: 0,
-    name: '',
-    surname: '',
-    userName: '',
-    email: '',
-    password: '',
-    isDeleted: false,
-  };
-  gender: string = "";
+
   constructor(private fb: FormBuilder) {
     this.updateForm = this.fb.group({
       userName: ['', [Validators.required]],
@@ -32,6 +23,7 @@ export class UserPageComponent {
       gender: ['', [Validators.required]]
     });   
   }
+
   ngOnInit(): void {
     window.addEventListener('resize', () => {
       this.checkIfMobile();
@@ -43,20 +35,24 @@ export class UserPageComponent {
       gender: "male"
     });
   }
+
   ngOnDestroy() {
     window.removeEventListener('resize', () => {
       this.checkIfMobile();
     });
   }
+
   checkIfMobile() {
     this.isMobile = window.innerWidth <= 768;
   }
+
   onUpdate(){
     this.updateForm.markAllAsTouched();
     if (this.updateForm.valid) {
       console.log(this.updateForm.value);
     }
   }
+  
   onDelete(){
     
   }

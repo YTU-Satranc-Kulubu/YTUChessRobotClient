@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
-import { User } from '../models/ui-models/user-model';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { emailValidator, emailPatternAsyncValidator } from '../validators/email-validator';
 import { userNameAsyncValidator } from '../validators/user-name-validator';

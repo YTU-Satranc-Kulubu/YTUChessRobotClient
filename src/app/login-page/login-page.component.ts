@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -30,14 +30,17 @@ export class LoginPageComponent {
       this.checkIfMobile();
     });
   }
+
   ngOnDestroy() {
     window.removeEventListener('resize', () => {
       this.checkIfMobile();
     });
   }
+
   checkIfMobile() {
     this.isMobile = window.innerWidth <= 768;
   }
+  
   onLogin(){
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
