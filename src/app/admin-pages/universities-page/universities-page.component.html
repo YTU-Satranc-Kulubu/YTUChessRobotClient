@@ -1,0 +1,47 @@
+<div class="main-container">
+    <div class="add-university-container">
+        <button (click)="isAddClicked = !isAddClicked"><p *ngIf="!isAddClicked">{{ 'universities-page.add-university' | translate }}</p><p *ngIf="isAddClicked">{{ 'universities-page.back-down' | translate }}</p></button>
+        <div class="form-container" *ngIf="isAddClicked">
+            <form [formGroup]="addUniversityForm" (ngSubmit)="onAdd()">
+                <label for="name">{{ 'universities-page.name' | translate }}:</label>
+                <input type="text" id="name" formControlName="name"/>
+                <div class="error-message" *ngIf="addUniversityForm.get('name')?.touched && addUniversityForm.get('name')?.invalid">
+                    <span *ngIf="addUniversityForm.get('name')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+                    <span *ngIf="addUniversityForm.get('name')?.errors?.['inUse']">{{ 'universities-page.err-taken' | translate }}</span>
+                </div>
+
+                <label for="leaderUserName">{{ 'universities-page.leaderUserName' | translate }}:</label>
+                <input type="text" id="leaderUserName" formControlName="leaderUserName"/>
+                <div class="error-message" *ngIf="addUniversityForm.get('leaderUserName')?.touched && addUniversityForm.get('leaderUserName')?.invalid">
+                    <span *ngIf="addUniversityForm.get('leaderUserName')?.errors?.['required']">{{ 'public.err-required' | translate }}</span>
+                    <span *ngIf="addUniversityForm.get('leaderUserName')?.errors?.['doesntExist']">{{ 'universities-page.err-doesntExist' | translate }}</span>
+                    <span *ngIf="addUniversityForm.get('leaderUserName')?.errors?.['notAvailable']">{{ 'universities-page.err-notAvailable' | translate }}</span>
+                </div>
+
+                <div class="add-button">
+                    <button type="submit">{{ 'public.add' | translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>University</th>
+                    <th>Leader</th>
+                    <th>Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let university of universities; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ university.name }}</td>
+                    <td>{{ university.leaderUserName }}</td>
+                    <td><img src="assets/info-icon.png" alt="uni-page" (click)="goToUniversityPage(university.id)"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

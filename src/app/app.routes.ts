@@ -14,6 +14,8 @@ import { ContactUsPageComponent } from './visitor-pages/contact-us-page/contact-
 import { AboutPageComponent } from './visitor-pages/about-page/about-page.component';
 import { FaqPageComponent } from './visitor-pages/faq-page/faq-page.component';
 import { SendMailPageComponent } from './admin-pages/send-mail-page/send-mail-page.component';
+import { UniversitiesPageComponent } from './admin-pages/universities-page/universities-page.component';
+import { ClubsPageComponent } from './admin-pages/clubs-page/clubs-page.component';
 
 export const routes: Routes = [
     // visitor-pages
@@ -34,4 +36,6 @@ export const routes: Routes = [
     {path: 'secret-login', component: AdminLoginPageComponent},
     {path: "secret-admin", component: AdminPageComponent},
     {path: "send-mail", component: SendMailPageComponent},
+    {path: "universities", component: UniversitiesPageComponent},
+    {path: "clubs", component: ClubsPageComponent},
 ];

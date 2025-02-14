@@ -18,7 +18,8 @@
         "err-pass-minlength": "En az 6 karakter giriniz",
         "male": "Erkek",
         "female": "Kadın",
-        "doesnt-say": "Belirtmek istemiyorum"
+        "doesnt-say": "Belirtmek istemiyorum",
+        "add": "Ekle"
     },
     "main-page": {
         "title": "YTÜ Satranç Robotu",
@@ -99,5 +100,14 @@
         "receiver": "Kime gönderilsin",
         "everyone": "Herkese",
         "message": "İçerik"
+    },
+    "universities-page": {
+        "name": "Üniversite Adı",
+        "leaderUserName": "Lider Kullanıcı Adı",
+        "add-university": "Üniversite Ekle",
+        "back-down": "Vazgeç",
+        "err-taken": "Zaten kayıtlı",
+        "err-doesntExist": "Kullancı bulunamadı",
+        "err-notAvailable": "Lider olmaya uygun değil"
     }
 }

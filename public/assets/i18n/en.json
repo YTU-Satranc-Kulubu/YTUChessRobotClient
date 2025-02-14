@@ -18,7 +18,8 @@
         "err-pass-minlength": "Minimum length is 6",
         "male": "Man",
         "female": "Woman",
-        "doesnt-say": "Don't want to share"
+        "doesnt-say": "Don't want to share",
+        "add": "Add"
     },
     "main-page": {
         "title": "YTU Chess Robot",
@@ -100,5 +101,14 @@
         "receiver": "Who to send",
         "everyone": "Everyone",
         "message": "Content"
+    },
+    "universities-page": {
+        "name": "University Name",
+        "leaderUserName": "Leader User Name",
+        "add-university": "Add University",
+        "back-down": "Back Down",
+        "err-taken": "Already registered",
+        "err-doesntExist": "User doesn't exists",
+        "err-notAvailable": "Not fit for leader"
     }
 }
