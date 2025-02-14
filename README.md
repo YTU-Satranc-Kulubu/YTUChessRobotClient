@@ -8,7 +8,7 @@
 
 ## YTUChessRobot Hakkında
 YTUChessRobot projesi: Yıldız Teknik Ünivresitesi Satranç Kulübü tarafından geliştirilmektedir. 
-Bu repository projenin frontend kodlarını içermektedir, backend kodları için diğer repositorylere göz atabilirsiniz.
+Bu repository projenin frontend kodlarını içermektedir, backend kodları için [YTUChessRobotServer](https://github.com/YTU-Satranc-Kulubu/YTUChessRobotServer)'a göz atabilirsiniz.
 
 YTUChessRobot'a bu link üzerinden erişebilirsiniz:
 [YTUChessRobot](https://google.com)
